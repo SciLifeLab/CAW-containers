@@ -18,13 +18,16 @@ at [SciLifeLab Stockholm](https://www.scilifelab.se/platforms/ngi/), Sweden.
 - Contain [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) v0.11.5
 
 ### mapreads
-- Based on `base`
+- Based on `samtools`
 - Contain [BWA](http://github.com/lh3/bwa) v0.7.8
+
+### samtools
+- Based on `base`
 - Contain [samtools](https://github.com/samtools/samtools) v1.3
 
-### mergebams
+### picard
 - Based on `base`
-- Contain [samtools](https://github.com/samtools/samtools) v1.3
+- Contain [picard](https://github.com/broadinstitute/picard) v1.118
 
 
 
