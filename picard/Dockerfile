@@ -1,5 +1,7 @@
 FROM maxulysse/caw-containers:base-vA
 
+FROM openjdk:8
+
 MAINTAINER Maxime Garcia <maxime.garcia@scilifelab.se>
 
 #Install PicardTools
