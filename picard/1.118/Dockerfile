@@ -1,4 +1,4 @@
-FROM maxulysse/caw-containers:base-vA
+FROM maxulysse/caw-base:vA
 
 FROM openjdk:8
 
