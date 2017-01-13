@@ -1,4 +1,4 @@
-FROM maxulysse/caw-containers:base-vA
+FROM maxulysse/caw-base:vA
 
 MAINTAINER Maxime Garcia <maxime.garcia@scilifelab.se>
 
