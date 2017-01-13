@@ -1,7 +1,8 @@
-FROM maxulysse/caw-containers:base-vA
+FROM maxulysse/caw-base:vA
 
 MAINTAINER Maxime Garcia <maxime.garcia@scilifelab.se>
 
+#Install libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	zlib1g-dev \
 	libncurses5-dev \
