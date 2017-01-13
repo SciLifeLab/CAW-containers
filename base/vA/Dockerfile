@@ -11,6 +11,3 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	gcc \
 	make \
 	build-essential
-
-# Default to UTF-8 file.encoding
-ENV LANG C.UTF-8
