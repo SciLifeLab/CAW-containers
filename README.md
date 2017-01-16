@@ -9,26 +9,33 @@ at [SciLifeLab Stockholm](https://www.scilifelab.se/platforms/ngi/), Sweden.
 - Maxime Garcia (@MaxUlysse)
 
 ## Containers
-### base
+### caw-base
 - Based on `debian:8.6`
 - Contain building essentials
 
-### runfastqc
-- Based on `base`
-- Contain [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) v0.11.5
+### bwa
+- Based on `caw-base`
+- Contain [BWA](http://github.com/lh3/bwa)
 
-### mapreads
-- Based on `samtools`
-- Contain [BWA](http://github.com/lh3/bwa) v0.7.8
+### fastqc
+- Based on `caw-base`
+- Contain [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
-### samtools
-- Based on `base`
-- Contain [samtools](https://github.com/samtools/samtools) v1.3
+### gatk
+- Based on `caw-base`
+- Contain [gatk](https://github.com/broadgsa/gatk-protected)
+
+### mutect1
+- Based on `caw-base`
+- Contain [mutect1]()
 
 ### picard
-- Based on `base`
-- Contain [picard](https://github.com/broadinstitute/picard) v1.118
+- Based on `caw-base` & `openjdk:8`
+- Contain [picard](https://github.com/broadinstitute/picard)
 
+### samtools
+- Based on `caw-base`
+- Contain [samtools](https://github.com/samtools/samtools)
 
 
 [version-badge]:    https://img.shields.io/badge/CAW--containers-vα-green.svg
@@ -37,5 +44,5 @@ at [SciLifeLab Stockholm](https://www.scilifelab.se/platforms/ngi/), Sweden.
 [license-link]:     https://github.com/MaxUlysse/CAW-containers/blob/master/LICENSE
 [nextflow-badge]:   https://img.shields.io/badge/nextflow-%E2%89%A50.22.2-brightgreen.svg
 [nextflow-link]:    https://www.nextflow.io/
-[docker-badge]:     https://img.shields.io/docker/automated/maxulysse/caw-containers.svg
-[docker-link]:      https://hub.docker.com/r/maxulysse/caw-containers
+[docker-badge]:     https://img.shields.io/docker/automated/maxulysse/caw-base.svg
+[docker-link]:      https://hub.docker.com/r/maxulysse/caw-base
