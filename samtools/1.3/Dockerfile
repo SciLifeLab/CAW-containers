@@ -1,11 +1,16 @@
-FROM maxulysse/caw-base:0.9.9
+FROM debian:8.6
 
 MAINTAINER Maxime Garcia <maxime.garcia@scilifelab.se>
 
 #Install libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
+	build-essential \
+	ca-certificates \
+	git \
 	libncursesw5-dev \
 	libncurses5-dev \
+	make \
+	wget \
 	zlib1g-dev \
 	&& rm -rf /var/lib/apt/lists/*
 
