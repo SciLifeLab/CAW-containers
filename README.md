@@ -8,7 +8,7 @@ at [SciLifeLab Stockholm](https://www.scilifelab.se/platforms/ngi/), Sweden.
 ## Author
 - Maxime Garcia (@MaxUlysse)
 
-## Containers
+## Containers for tools
 Each container contains a tool whose version is the directory the Dockerfile is inside.
 
 ### bwa [![bwa-Docker status][bwa-docker-badge]][bwa-docker-link]
@@ -35,22 +35,30 @@ Each container contains a tool whose version is the directory the Dockerfile is 
 - Based on `debian:8.6`
 - Contain [samtools](https://github.com/samtools/samtools)
 
+## Containers for processes
+Each container contains tools used for the specific process.
 
-[version-badge]: https://img.shields.io/badge/CAW--containers-vα-green.svg
-[version-link]: https://github.com/MaxUlysse/CAW-containers/releases/tag/vα
-[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[license-link]: https://github.com/MaxUlysse/CAW-containers/blob/master/LICENSE
-[nextflow-badge]: https://img.shields.io/badge/nextflow-%E2%89%A50.22.2-brightgreen.svg
-[nextflow-link]: https://www.nextflow.io/
+### mapreads [![mapreads-Docker status][mapreads-docker-badge]][mapreads-docker-link]
+- `maxulysse/bwa:0.7.8`
+- `maxulysse/samtools:1.3`
+
 [bwa-docker-badge]: https://img.shields.io/docker/automated/maxulysse/bwa.svg
 [bwa-docker-link]: https://hub.docker.com/r/maxulysse/bwa
 [fastqc-docker-badge]: https://img.shields.io/docker/automated/maxulysse/fastqc.svg
 [fastqc-docker-link]: https://hub.docker.com/r/maxulysse/fastqc
 [gatk-docker-badge]: https://img.shields.io/docker/automated/maxulysse/gatk.svg
 [gatk-docker-link]: https://hub.docker.com/r/maxulysse/gatk
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[license-link]: https://github.com/MaxUlysse/CAW-containers/blob/master/LICENSE
+[mapreads-docker-badge]: https://img.shields.io/docker/automated/maxulysse/mapreads.svg
+[mapreads-docker-link]: https://hub.docker.com/r/maxulysse/mapreads
 [mutect1-docker-badge]: https://img.shields.io/docker/automated/maxulysse/mutect1.svg
 [mutect1-docker-link]: https://hub.docker.com/r/maxulysse/mutect1
+[nextflow-badge]: https://img.shields.io/badge/nextflow-%E2%89%A50.22.2-brightgreen.svg
+[nextflow-link]: https://www.nextflow.io/
 [picard-docker-badge]: https://img.shields.io/docker/automated/maxulysse/picard.svg
 [picard-docker-link]: https://hub.docker.com/r/maxulysse/picard
 [samtools-docker-badge]: https://img.shields.io/docker/automated/maxulysse/samtools.svg
 [samtools-docker-link]: https://hub.docker.com/r/maxulysse/samtools
+[version-badge]: https://img.shields.io/badge/CAW--containers-vα-green.svg
+[version-link]: https://github.com/MaxUlysse/CAW-containers/releases/tag/vα
