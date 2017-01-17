@@ -4,10 +4,10 @@ MAINTAINER Maxime Garcia <maxime.garcia@scilifelab.se>
 
 #Install libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
-  libncursesw5-dev \
+	libncursesw5-dev \
 	libncurses5-dev \
-  zlib1g-dev \
-  && rm -rf /var/lib/apt/lists/*
+	zlib1g-dev \
+	&& rm -rf /var/lib/apt/lists/*
 
 #Install BWA 0.7.8
 RUN git clone http://github.com/lh3/bwa bwa && \
