@@ -14,7 +14,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 #Install BWA 0.7.8
-RUN git clone http://github.com/lh3/bwa bwa && \
+RUN git clone https://github.com/lh3/bwa bwa && \
 	cd bwa && \
 	git checkout 0.7.8 && \
-	make && cp bwa /usr/local/bin/bwa
+	make && \
+	cp bwa /usr/local/bin/bwa && \
+	cd .. && \
+	rm -rf bwa
