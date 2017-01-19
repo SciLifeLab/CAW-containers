@@ -36,9 +36,10 @@ Each container contains a tool whose version is the directory the Dockerfile is 
 - Contain [samtools](https://github.com/samtools/samtools)
 
 ## Containers for processes
-Each container contains tools used for the specific process.
+Each container contains tools used for the specific process. If the process uses just one tool, the container for the tool is used for the process. If the process contains more than one tool, a container is made containing them.
 
 ### mapreads [![mapreads-Docker status][mapreads-docker-badge]][mapreads-docker-link]
+Based on `debian:8.6` contains :
 - `maxulysse/bwa:0.7.8`
 - `maxulysse/samtools:1.3`
 
