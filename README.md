@@ -13,35 +13,35 @@ For process that needs only one tool, the container for the tool is directly use
 
 ### fastqc [![fastqc-Docker status][fastqc-docker-badge]][fastqc-docker-link]
 - Based on `debian:8.6`
-- Contain [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+- Contain [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) 0.11.5
 
 ### gatk [![gatk-Docker status][gatk-docker-badge]][gatk-docker-link]
 - Based on `openjdk:8`
-- Contain [gatk](https://github.com/broadgsa/gatk-protected)
+- Contain [gatk](https://github.com/broadgsa/gatk-protected) 3.7
 
 ### multiqc [![multiqc-Docker status][multiqc-docker-badge]][multiqc-docker-link]
 - Based on `openjdk:8`
-- Contain [multiqc](https://github.com/ewels/MultiQC/)
+- Contain [multiqc](https://github.com/ewels/MultiQC/) 0.9
 
 ### mutect1 [![mutect1-Docker status][mutect1-docker-badge]][mutect1-docker-link]
 - Based on `openjdk:7`
-- Contain [mutect1](https://github.com/broadinstitute/mutect)
+- Contain [mutect1](https://github.com/broadinstitute/mutect) 1.5
 
 ### picard [![picard-Docker status][picard-docker-badge]][picard-docker-link]
 - Based on `openjdk:8`
-- Contain [picard](https://github.com/broadinstitute/picard)
+- Contain [picard](https://github.com/broadinstitute/picard) 2.0.1
 
 ### samtools [![samtools-Docker status][samtools-docker-badge]][samtools-docker-link]
 - Based on `debian:8.6`
-- Contain [samtools](https://github.com/samtools/samtools)
+- Contain [samtools](https://github.com/samtools/samtools) 1.3
 
 ## Containers for processes
 For process that needs more than one tool, these containers contain them all.
 
 ### mapreads [![mapreads-Docker status][mapreads-docker-badge]][mapreads-docker-link]
 Based on `debian:8.6` contains :
-- Contain [BWA](http://github.com/lh3/bwa)
-- Contain [samtools](https://github.com/samtools/samtools)
+- Contain [BWA](http://github.com/lh3/bwa) 0.7.8
+- Contain [samtools](https://github.com/samtools/samtools) 1.3
 
 [fastqc-docker-badge]: https://img.shields.io/docker/automated/maxulysse/fastqc.svg
 [fastqc-docker-link]: https://hub.docker.com/r/maxulysse/fastqc
