@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	wget \
 	&& rm -rf /var/lib/apt/lists/*
 
-#Install FastQC v0.11.5
+#Install FastQC 0.11.5
 RUN wget -O /opt/fastqc_v0.11.5.zip http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip \
 	&& unzip /opt/fastqc_v0.11.5.zip -d /opt/ \
 	&& chmod 755 /opt/FastQC/fastqc \
