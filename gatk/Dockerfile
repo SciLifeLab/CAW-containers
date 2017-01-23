@@ -1,7 +1,8 @@
 FROM openjdk:8
 
-LABEL maintainer "maxime.garcia@scilifelab.se" \
-	description="GATK 3.7 image for use in CAW"
+LABEL author="Maxime Garcia" \
+	description="GATK 3.7 image for use in CAW" \
+	maintainer="maxime.garcia@scilifelab.se"
 
 #Install GATK
 ENV GATK_HOME /opt/gatk
