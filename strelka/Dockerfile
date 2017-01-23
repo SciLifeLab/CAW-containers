@@ -18,7 +18,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 	#Install Strelka
 ENV STRELKA_INSTALL_DIR /opt/strelka/
-RUN wget https://github.com/Illumina/strelka/releases/download/v2.7.1/strelka-2.7.1.centos5_x86_64.tar.bz2 \
-	&& tar xf strelka-2.7.1.centos5_x86_64.tar.bz2 \
-	&& rm -f strelka-2.7.1.centos5_x86_64.tar.bz2 \
-	&& mv strelka-2.7.1.centos5_x86_64 $STRELKA_INSTALL_DIR
+RUN wget https://sites.google.com/site/strelkasomaticvariantcaller/home/download/strelka_workflow-1.0.15.tar.gz \
+	&& tar xf strelka_workflow-1.0.15.tar.gz \
+	&& rm -f strelka_workflow-1.0.15.tar.gz \
+	&& cd strelka_workflow-1.0.15 \
+	&& ./configure --prefix=$STRELKA_INSTALL_DIR \
+	&& make
