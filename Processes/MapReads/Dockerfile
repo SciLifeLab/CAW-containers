@@ -17,13 +17,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 #Install BWA
-RUN git clone http://github.com/lh3/bwa bwa && \
-	cd bwa && \
-	git checkout 0.7.8 && \
-	make && \
-	cp bwa /usr/local/bin/bwa && \
-	cd .. && \
-	rm -rf bwa
+RUN git clone http://github.com/lh3/bwa bwa \
+	&& cd bwa \
+	&& git checkout 0.7.8 \
+	&& make \
+	&& cp bwa /usr/local/bin/bwa \
+	&& cd .. \
+	&& rm -rf bwa
 
 #Install SAMTools
 RUN curl -fsSL https://github.com/samtools/samtools/releases/download/1.3/samtools-1.3.tar.bz2 -o /opt/samtools-1.3.tar.bz2 \
