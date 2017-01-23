@@ -1,6 +1,7 @@
 FROM debian:8.6
 
-MAINTAINER Maxime Garcia <maxime.garcia@scilifelab.se>
+LABEL maintainer "maxime.garcia@scilifelab.se" \
+	description="BWA 0.7.8 and SAMTools 1.3 image for use in CAW"
 
 #Install libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -14,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	zlib1g-dev \
 	&& rm -rf /var/lib/apt/lists/*
 
-#Install BWA 0.7.8
+#Install BWA
 RUN git clone http://github.com/lh3/bwa bwa && \
 	cd bwa && \
 	git checkout 0.7.8 && \
@@ -23,7 +24,7 @@ RUN git clone http://github.com/lh3/bwa bwa && \
 	cd .. && \
 	rm -rf bwa
 
-#Install SAMTools 1.3
+#Install SAMTools
 RUN wget -q -O /opt/samtools-1.3.tar.bz2 https://github.com/samtools/samtools/releases/download/1.3/samtools-1.3.tar.bz2 \
 	&& tar xvjf /opt/samtools-1.3.tar.bz2 -C /opt/ \
 	&& cd /opt/samtools-1.3 \

@@ -1,12 +1,12 @@
 FROM openjdk:8
 
-MAINTAINER Maxime Garcia <maxime.garcia@scilifelab.se>
+LABEL maintainer "maxime.garcia@scilifelab.se" \
+	description="GATK 3.7 image for use in CAW"
 
-#Install GATK 3.7
-COPY GenomeAnalysisTK-3.7.tar.bz2 /opt/gatk/gatk.tar.bz2
+#Install GATK
+ENV GATK_HOME /opt/gatk
+COPY GenomeAnalysisTK-3.7.tar.bz2 $GATK_HOME/gatk.tar.bz2
 
-RUN cd /opt/gatk/ \
+RUN cd $GATK_HOME \
 	&& tar -jxf gatk.tar.bz2 \
 	&& rm gatk.tar.bz2
-
-ENV GATK_HOME /opt/gatk

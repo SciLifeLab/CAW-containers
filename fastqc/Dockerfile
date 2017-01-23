@@ -1,6 +1,7 @@
 FROM openjdk:8
 
-MAINTAINER Maxime Garcia <maxime.garcia@scilifelab.se>
+LABEL maintainer "maxime.garcia@scilifelab.se" \
+	description="FastQC 0.11.5 image for use in CAW"
 
 #Install libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -10,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	wget \
 	&& rm -rf /var/lib/apt/lists/*
 
-#Install FastQC 0.11.5
+#Install FastQC
 RUN wget -O /opt/fastqc_v0.11.5.zip http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip \
 	&& unzip /opt/fastqc_v0.11.5.zip -d /opt/ \
 	&& chmod 755 /opt/FastQC/fastqc \

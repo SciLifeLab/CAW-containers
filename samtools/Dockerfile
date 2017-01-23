@@ -1,6 +1,7 @@
 FROM debian:8.6
 
-MAINTAINER Maxime Garcia <maxime.garcia@scilifelab.se>
+LABEL maintainer "maxime.garcia@scilifelab.se" \
+	description="SAMTools 1.3 image for use in CAW"
 
 #Install libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
