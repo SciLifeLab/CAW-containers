@@ -35,6 +35,10 @@ For process that needs only one tool, the container for the tool is directly use
 - Based on `debian:8.6`
 - Contain [samtools](https://github.com/samtools/samtools) 1.3
 
+### strelka [![strelka-Docker status][strelka-docker-badge]][strelka-docker-link]
+- Based on `debian:8.6`
+    - Contain [strelka](https://sites.google.com/site/strelkasomaticvariantcaller/home) 1.0.15
+
 ## Containers for processes
 For process that needs more than one tool, these containers contain them all.
 
@@ -61,5 +65,7 @@ Based on `debian:8.6` contains :
 [picard-docker-link]: https://hub.docker.com/r/maxulysse/picard
 [samtools-docker-badge]: https://img.shields.io/docker/automated/maxulysse/samtools.svg
 [samtools-docker-link]: https://hub.docker.com/r/maxulysse/samtools
+[strelka-docker-badge]: https://img.shields.io/docker/automated/maxulysse/strelka.svg
+[strelka-docker-link]: https://hub.docker.com/r/maxulysse/strelka
 [version-badge]: https://img.shields.io/badge/CAW--containers-vα-green.svg
 [version-link]: https://github.com/MaxUlysse/CAW-containers/releases/tag/vα
