@@ -16,4 +16,4 @@ RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py -o /opt/get-pip.py \
 	&& rm /opt/get-pip.py
 
 #Install MultiQC
-RUN pip install git+git://github.com/ewels/MultiQC.git
+RUN pip install git+git://github.com/ewels/MultiQC.git@v0.9
