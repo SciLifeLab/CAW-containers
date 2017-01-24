@@ -12,7 +12,7 @@ at [SciLifeLab Stockholm](https://www.scilifelab.se/platforms/ngi/), Sweden.
 For process that needs only one tool, the container for the tool is directly used.
 
 ### fastqc [![fastqc-Docker status][fastqc-docker-badge]][fastqc-docker-link]
-- Based on `debian:8.6`
+- Based on `openjdk:8`
 - Contain [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) 0.11.5
 
 ### gatk [![gatk-Docker status][gatk-docker-badge]][gatk-docker-link]
