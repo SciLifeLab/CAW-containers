@@ -5,12 +5,12 @@ description="MuTect 1.1.5 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
 #Setup ENV variables
-ENV MUTECT_VERSION 1.1.5
-ENV MUTECT_HOME /opt/mutect-$MUTECT_VERSION
-ENV MUTECT_ZIP muTect-$MUTECT_VERSION-bin.zip
+ENV MUTECT_BIN="muTect-1.1.5-bin.zip" \
+MUTECT_HOME="/opt/mutect-1.1.5" \
+MUTECT_VERSION="1.1.5"
 
 #Install MuTect1
-RUN curl -fsSL https://github.com/broadinstitute/mutect/releases/download/$MUTECT_VERSION/$MUTECT_ZIP -o /opt/$MUTECT_ZIP \
-&& unzip /opt/$MUTECT_ZIP -d $MUTECT_HOME \
-&& rm /opt/$MUTECT_ZIP \
+RUN curl -fsSL https://github.com/broadinstitute/mutect/releases/download/$MUTECT_VERSION/$MUTECT_BIN -o /opt/$MUTECT_BIN \
+&& unzip /opt/$MUTECT_BIN -d $MUTECT_HOME \
+&& rm /opt/$MUTECT_BIN \
 && mv $MUTECT_HOME/muTect-$MUTECT_VERSION.jar $MUTECT_HOME/muTect.jar

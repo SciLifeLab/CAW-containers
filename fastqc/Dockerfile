@@ -5,8 +5,7 @@ description="FastQC 0.11.5 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
 #Setup ENV variables
-ENV FASTQC_VERSION v0.11.5
-ENV FASTQC_BIN fastqc_$FASTQC_VERSION.zip
+ENV FASTQC_BIN="fastqc_v0.11.5.zip"
 
 #Install FastQC
 RUN curl -fsSL http://www.bioinformatics.babraham.ac.uk/projects/fastqc/$FASTQC_BIN -o /opt/$FASTQC_BIN \

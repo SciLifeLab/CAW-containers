@@ -17,23 +17,21 @@ zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 
 #Setup ENV variables
-ENV BWA_VERSION 0.7.8
-ENV SAMTOOLS_VERSION 1.3
-ENV SAMTOOLS_TAR samtools-$SAMTOOLS_VERSION.tar.bz2
+ENV BWA_VERSION="0.7.8" \
+SAMTOOLS_BIN="samtools-1.3.tar.bz2" \
+SAMTOOLS_VERSION="1.3"
 
-#Install BWA
+#Install BWA and SAMTools
 RUN git clone http://github.com/lh3/bwa.git bwa \
 && cd bwa \
 && git checkout $BWA_VERSION -b Docker-BWA-$BWA_VERSION \
 && make \
 && cp bwa /usr/local/bin/bwa \
 && cd .. \
-&& rm -rf bwa
-
-#Install SAMTools
-RUN curl -fsSL https://github.com/samtools/samtools/releases/download/$SAMTOOLS_VERSION/$SAMTOOLS_TAR -o /opt/$SAMTOOLS_TAR \
-&& tar xvjf /opt/$SAMTOOLS_TAR -C /opt/ \
+&& rm -rf bwa \
+&& curl -fsSL https://github.com/samtools/samtools/releases/download/$SAMTOOLS_VERSION/$SAMTOOLS_BIN -o /opt/$SAMTOOLS_BIN \
+&& tar xvjf /opt/$SAMTOOLS_BIN -C /opt/ \
 && cd /opt/samtools-$SAMTOOLS_VERSION \
 && make \
 && make install \
-&& rm /opt/$SAMTOOLS_TAR
+&& rm /opt/$SAMTOOLS_BIN

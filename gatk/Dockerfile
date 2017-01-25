@@ -5,9 +5,8 @@ description="GATK 3.7 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
 #Setup ENV variables
-ENV GATK_VERSION 3.7
-ENV GATK_BIN GenomeAnalysisTK-$GATK_VERSION.tar.bz2
-ENV GATK_HOME /opt/gatk
+ENV GATK_BIN="GenomeAnalysisTK-3.7.tar.bz2" \
+GATK_HOME="/opt/gatk"
 
 #Install GATK
 COPY $GATK_BIN $GATK_HOME/$GATK_BIN

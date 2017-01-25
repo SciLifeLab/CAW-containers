@@ -17,9 +17,10 @@ rsync \
 zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 
-ENV STRELKA_INSTALL_DIR /opt/strelka/
-ENV STRELKA_VERSION 1.0.15
-ENV STRELKA_BIN strelka_workflow-$STRELKA_VERSION.tar.gz
+#Setup ENV variables
+ENV STRELKA_BIN="strelka_workflow-1.0.15.tar.gz" \
+STRELKA_INSTALL_DIR="/opt/strelka/" \
+STRELKA_VERSION="1.0.15"
 
 #Install Strelka
 RUN curl -fsSL https://sites.google.com/site/strelkasomaticvariantcaller/home/download/$STRELKA_BIN -o $STRELKA_BIN \
