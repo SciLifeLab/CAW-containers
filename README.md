@@ -2,7 +2,7 @@
 
 [![caw-containers version][version-badge]][version-link] [![mit license][license-badge]][license-link] [![nextflow version][nextflow-badge]][nextflow-link]
 
-Nextflow Cancer Analysis Workflow Prototype developed at the [National Genomics Infastructure]([ngi-link]) at [SciLifeLab Stockholm]([scilifelab-stockholm-link]), Sweden.
+Nextflow Cancer Analysis Workflow Prototype developed at the [National Genomics Infastructure][ngi-link] at [SciLifeLab Stockholm][scilifelab-stockholm-link], Sweden.
 
 ## Author
 
@@ -15,32 +15,32 @@ For process that needs only one tool, an image is made with the tool to be used 
 ### fastqc [![fastqc-docker status][fastqc-docker-badge]][fastqc-docker-link]
 
 - Based on `openjdk:8`
-- Contain **[FastQC]([fastqc-link])** 0.11.5
+- Contain **[FastQC][fastqc-link]** 0.11.5
 
 ### gatk [![gatk-docker status][gatk-docker-badge]][gatk-docker-link]
 
 - Based on `openjdk:8`
-- Contain **[GATK]([gatk-link])** 3.7
+- Contain **[GATK][gatk-link]** 3.7
 
 ### multiqc [![multiqc-docker status][multiqc-docker-badge]][multiqc-docker-link]
 
 - Based on `openjdk:8`
-- Contain **[MultiQC]([multiqc-link])** 0.9
+- Contain **[MultiQC][multiqc-link]** 0.9
 
 ### mutect1 [![mutect1-docker status][mutect1-docker-badge]][mutect1-docker-link]
 
 - Based on `openjdk:7`
-- Contain **[MuTect1]([mutect1-link])** 1.5
+- Contain **[MuTect1][mutect1-link]** 1.5
 
 ### picard [![picard-docker status][picard-docker-badge]][picard-docker-link]
 
 - Based on `openjdk:8`
-- Contain **[Picard]([picard-link])** 2.0.1
+- Contain **[Picard][picard-link]** 2.0.1
 
 ### strelka [![strelka-docker status][strelka-docker-badge]][strelka-docker-link]
 
 - Based on `debian:8.6`
-- Contain **[Strelka]([strelka-link])** 1.0.15
+- Contain **[Strelka][strelka-link]** 1.0.15
 
 ## Images for process
 
@@ -49,8 +49,8 @@ For process that needs more than one tool, an image is made with the tools to be
 ### mapreads [![mapreads-docker status][mapreads-docker-badge]][mapreads-docker-link]
 
 - Based on `debian:8.6`
-- Contain **[BWA]([bwa-link])** 0.7.8
-- Contain **[SAMTools]([samtools-link])** 1.3
+- Contain **[BWA][bwa-link]** 0.7.8
+- Contain **[SAMTools][samtools-link]** 1.3
 
 [bwa-link]: http://github.com/lh3/bwa
 [fastqc-docker-badge]: https://img.shields.io/docker/automated/maxulysse/fastqc.svg
