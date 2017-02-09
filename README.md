@@ -12,6 +12,11 @@ Nextflow Cancer Analysis Workflow Prototype developed at the [National Genomics 
 
 For process that needs only one tool, an image is made with the tool to be used for this process.
 
+### bcftools [![bcftools-docker status][bcftools-docker-badge]][bcftools-docker-link]
+
+- Based on `debian:8.6`
+- Contain **[BCFTools][bcftools-link]** 1.3
+
 ### fastqc [![fastqc-docker status][fastqc-docker-badge]][fastqc-docker-link]
 
 - Based on `openjdk:8`
@@ -46,13 +51,22 @@ For process that needs only one tool, an image is made with the tool to be used 
 
 For process that needs more than one tool, an image is made with the tools to be used for this process.
 
-### mapreads [![mapreads-docker status][mapreads-docker-badge]][mapreads-docker-link]
+### MapReads [![mapreads-docker status][mapreads-docker-badge]][mapreads-docker-link]
 
 - Based on `debian:8.6`
 - Contain **[BWA][bwa-link]** 0.7.8
 - Contain **[SAMTools][samtools-link]** 1.3
 
-[bwa-link]: http://github.com/lh3/bwa
+### RunManta [![runmanta-docker status][runmanta-docker-badge]][runmanta-docker-link]
+
+- Based on `debian:8.6`
+- Contain **[Manta][manta-link]** 1.0
+- Contain **[SAMTools][samtools-link]** 1.3
+
+[bwa-link]: https://github.com/lh3/bwa
+[bcftools-docker-badge]: https://img.shields.io/docker/automated/maxulysse/bcftools.svg
+[bcftools-docker-link]: https://hub.docker.com/r/maxulysse/bcftools
+[bcftools-link]: https://samtools.github.io/bcftools/
 [fastqc-docker-badge]: https://img.shields.io/docker/automated/maxulysse/fastqc.svg
 [fastqc-docker-link]: https://hub.docker.com/r/maxulysse/fastqc
 [fastqc-link]: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
@@ -61,6 +75,7 @@ For process that needs more than one tool, an image is made with the tools to be
 [gatk-link]: https://github.com/broadgsa/gatk-protected
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-link]: https://github.com/MaxUlysse/CAW-containers/blob/master/LICENSE
+[manta-link]: https://github.com/Illumina/manta
 [mapreads-docker-badge]: https://img.shields.io/docker/automated/maxulysse/mapreads.svg
 [mapreads-docker-link]: https://hub.docker.com/r/maxulysse/mapreads
 [multiqc-docker-badge]: https://img.shields.io/docker/automated/maxulysse/multiqc.svg
@@ -75,6 +90,8 @@ For process that needs more than one tool, an image is made with the tools to be
 [picard-docker-badge]: https://img.shields.io/docker/automated/maxulysse/picard.svg
 [picard-docker-link]: https://hub.docker.com/r/maxulysse/picard
 [picard-link]: https://github.com/broadinstitute/picard
+[runmanta-docker-badge]: https://img.shields.io/docker/automated/maxulysse/runmanta.svg
+[runmanta-docker-link]: https://hub.docker.com/r/maxulysse/runmanta
 [samtools-link]: https://github.com/samtools/samtools
 [scilifelab-stockholm-link]: https://www.scilifelab.se/platforms/ngi/
 [strelka-docker-badge]: https://img.shields.io/docker/automated/maxulysse/strelka.svg

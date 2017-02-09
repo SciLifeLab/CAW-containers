@@ -22,6 +22,8 @@
 - [ ] RunConvertAlleleCounts
 - [ ] RunAscat
 - [x] RunMultiQC
+- [x] BCFTools
+
 
 ## Build and push images:
 docker build -t maxulysse/bcftools:1.3 bcftools/.

@@ -36,7 +36,4 @@ RUN curl -fsSL https://github.com/Illumina/manta/releases/download/$MANTA_VERSIO
 && make install \
 && rm /opt/$SAMTOOLS_BIN /opt/$MANTA_BIN
 
-#Test Manta
-#RUN python $MANTA_INSTALL_PATH/bin/runMantaWorkflowDemo.py
-
 ENV PATH="/opt/manta-1.0.0:$PATH" \
