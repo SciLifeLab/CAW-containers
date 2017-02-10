@@ -18,12 +18,11 @@
 - [x] ConcatVCF
 - [x] RunStrelka
 - [x] RunManta
-- [ ] RunAlleleCount
+- [x] RunAlleleCount
 - [ ] RunConvertAlleleCounts
 - [ ] RunAscat
-- [x] RunMultiQC
 - [x] BCFTools
-
+- [x] RunMultiQC
 
 ## Build and push images:
 docker build -t maxulysse/bcftools:1.3 bcftools/.
@@ -46,6 +45,12 @@ docker push maxulysse/picard:2.0.1
 
 docker build -t maxulysse/mapreads:0.9.9 Processes/MapReads/.
 docker push maxulysse/mapreads:0.9.9
+
+docker build -t maxulysse/r:3.2.3 r/.
+docker push maxulysse/r:3.2.3
+
+docker build -t maxulysse/runallelecount:0.9.9 Processes/RunAlleleCount/.
+docker push maxulysse/runallelecount:0.9.9
 
 docker build -t maxulysse/runmanta:0.9.9 Processes/RunManta/.
 docker push maxulysse/runmanta:0.9.9
