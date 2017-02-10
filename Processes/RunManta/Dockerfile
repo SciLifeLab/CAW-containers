@@ -10,7 +10,6 @@ build-essential \
 ca-certificates \
 curl \
 git \
-gzip \
 libncursesw5-dev \
 libncurses5-dev \
 make \
@@ -35,5 +34,3 @@ RUN curl -fsSL https://github.com/Illumina/manta/releases/download/$MANTA_VERSIO
 && make \
 && make install \
 && rm /opt/$SAMTOOLS_BIN /opt/$MANTA_BIN
-
-ENV PATH="/opt/manta-1.0.0:$PATH" \
