@@ -97,5 +97,5 @@ For process that needs more than one tool, an image is made with the tools to be
 [strelka-docker-badge]: https://img.shields.io/docker/automated/maxulysse/strelka.svg
 [strelka-docker-link]: https://hub.docker.com/r/maxulysse/strelka
 [strelka-link]: https://sites.google.com/site/strelkasomaticvariantcaller/home
-[version-badge]: https://img.shields.io/badge/CAW--containers-α-green.svg
+[version-badge]: https://img.shields.io/badge/version-α-green.svg
 [version-link]: https://github.com/MaxUlysse/CAW-containers/releases/tag/α
