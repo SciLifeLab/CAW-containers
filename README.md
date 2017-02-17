@@ -1,6 +1,6 @@
 # Containers for CAW
 
-[![caw-containers version][version-badge]][version-link] [![mit license][license-badge]][license-link] [![nextflow version][nextflow-badge]][nextflow-link]
+[![caw-containers version][version-badge]][version-link] [![Licence][licence-badge]][licence-link] [![nextflow version][nextflow-badge]][nextflow-link]
 
 Nextflow Cancer Analysis Workflow Prototype developed at the [National Genomics Infastructure][ngi-link] at [SciLifeLab Stockholm][scilifelab-stockholm-link], Sweden.
 
@@ -73,8 +73,8 @@ For process that needs more than one tool, an image is made with the tools to be
 [gatk-docker-badge]: https://img.shields.io/docker/automated/maxulysse/gatk.svg
 [gatk-docker-link]: https://hub.docker.com/r/maxulysse/gatk
 [gatk-link]: https://github.com/broadgsa/gatk-protected
-[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[license-link]: https://github.com/MaxUlysse/CAW-containers/blob/master/LICENSE
+[licence-badge]: https://img.shields.io/github/license/MaxUlysse/CAW-containers.svg
+[licence-link]: https://github.com/MaxUlysse/CAW-containers/blob/master/LICENSE
 [manta-link]: https://github.com/Illumina/manta
 [mapreads-docker-badge]: https://img.shields.io/docker/automated/maxulysse/mapreads.svg
 [mapreads-docker-link]: https://hub.docker.com/r/maxulysse/mapreads
@@ -97,5 +97,5 @@ For process that needs more than one tool, an image is made with the tools to be
 [strelka-docker-badge]: https://img.shields.io/docker/automated/maxulysse/strelka.svg
 [strelka-docker-link]: https://hub.docker.com/r/maxulysse/strelka
 [strelka-link]: https://sites.google.com/site/strelkasomaticvariantcaller/home
-[version-badge]: https://img.shields.io/badge/version-α-green.svg
-[version-link]: https://github.com/MaxUlysse/CAW-containers/releases/tag/α
+[version-badge]: https://img.shields.io/github/release/MaxUlysse/CAW-containers.svg
+[version-link]: https://github.com/MaxUlysse/CAW-containers/releases/latest
