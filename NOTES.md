@@ -21,42 +21,46 @@
 - [x] RunAlleleCount
 - [ ] RunConvertAlleleCounts
 - [ ] RunAscat
+- [ ] RunSnpeff
 - [x] BCFTools
 - [x] RunMultiQC
 
 ## Build and push images:
-docker build -t maxulysse/bcftools:1.3 bcftools/.
-docker push maxulysse/bcftools:1.3
+docker build -t maxulysse/bcftools:1.0 bcftools/.
+docker push maxulysse/bcftools:1.0
 
-docker build -t maxulysse/fastqc:0.11.5 fastqc/.
-docker push maxulysse/fastqc:0.11.5
+docker build -t maxulysse/fastqc:1.0 fastqc/.
+docker push maxulysse/fastqc:1.0
 
-docker build -t maxulysse/gatk:3.7 gatk/.
-docker push maxulysse/gatk:3.7
+docker build -t maxulysse/gatk:1.0 gatk/.
+docker push maxulysse/gatk:1.0
 
-docker build -t maxulysse/multiqc:0.9 multiqc/.
-docker push maxulysse/multiqc:0.9
+docker build -t maxulysse/multiqc:1.0 multiqc/.
+docker push maxulysse/multiqc:1.0
 
-docker build -t maxulysse/mutect1:1.5 mutect1/.
-docker push maxulysse/mutect1:1.5
+docker build -t maxulysse/mutect1:1.0 mutect1/.
+docker push maxulysse/mutect1:1.0
 
-docker build -t maxulysse/picard:2.0.1 picard/.
-docker push maxulysse/picard:2.0.1
+docker build -t maxulysse/picard:1.0 picard/.
+docker push maxulysse/picard:1.0
 
-docker build -t maxulysse/mapreads:0.9.9 Processes/MapReads/.
-docker push maxulysse/mapreads:0.9.9
+docker build -t maxulysse/mapreads:1.0 mapreads/.
+docker push maxulysse/mapreads:1.0
 
-docker build -t maxulysse/r:3.2.3 r/.
-docker push maxulysse/r:3.2.3
+docker build -t maxulysse/r:1.cawr/.
+docker push maxulysse/r:1.0
 
-docker build -t maxulysse/runallelecount:0.9.9 Processes/RunAlleleCount/.
-docker push maxulysse/runallelecount:0.9.9
+docker build -t maxulysse/runallelecount:1.0 runallelecount/.
+docker push maxulysse/runallelecount:1.0
 
-docker build -t maxulysse/runmanta:0.9.9 Processes/RunManta/.
-docker push maxulysse/runmanta:0.9.9
+docker build -t maxulysse/runmanta:1.0 runmanta/.
+docker push maxulysse/runmanta:1.0
 
-docker build -t maxulysse/strelka:1.0.15 strelka/.
-docker push maxulysse/strelka:1.0.15
+docker build -t maxulysse/strelka:1.0 strelka/.
+docker push maxulysse/strelka:1.0
 
-docker build -t maxulysse/samtools:1.3 samtools/.
-docker push maxulysse/samtools:1.3
+docker build -t maxulysse/samtools:1.0 samtools/.
+docker push maxulysse/samtools:1.0
+
+docker build -t maxulysse/snpeff:1.0 snpeff/.
+docker push maxulysse/snpeff:1.0
