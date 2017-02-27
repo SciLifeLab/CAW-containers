@@ -17,8 +17,8 @@ zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 
 #Setup ENV variables
-ENV PATH="/opt/snpEff:$PATH" \
-SNPEFF_BIN="snpEff_v4_2_core.zip"
+ENV SNPEFF_BIN="snpEff_v4_2_core.zip" \
+SNPEFF_HOME="/opt/snpEff"
 
 #Install snpEff
 RUN wget http://downloads.sourceforge.net/project/snpeff/$SNPEFF_BIN -O /opt/$SNPEFF_BIN \
