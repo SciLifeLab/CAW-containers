@@ -8,11 +8,11 @@ maintainer="maxime.garcia@scilifelab.se"
 RUN apt-get update && apt-get install -y --no-install-recommends \
 build-essential \
 ca-certificates \
-curl \
 git \
 libncursesw5-dev \
 libncurses5-dev \
 make \
+wget \
 zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 
@@ -21,6 +21,6 @@ ENV PATH="/opt/snpEff:$PATH" \
 SNPEFF_BIN="snpEff_v4_2_core.zip"
 
 #Install snpEff
-RUN curl -fsSL https://downloads.sourceforge.net/project/snpeff/$SNPEFF_BIN -o /opt/$SNPEFF_BIN \
+RUN wget http://downloads.sourceforge.net/project/snpeff/$SNPEFF_BIN -O /opt/$SNPEFF_BIN \
 && unzip /opt/$SNPEFF_BIN -d /opt/ \
 && rm /opt/$SNPEFF_BIN
