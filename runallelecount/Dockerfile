@@ -1,7 +1,7 @@
 FROM debian:8.6
 
 LABEL author="Maxime Garcia" \
-description="alleleCount 0.7.8 and SAMTools 1.3 image for use in CAW" \
+description="alleleCount 2.2.0 and SAMTools 1.3 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
 #Install libraries
