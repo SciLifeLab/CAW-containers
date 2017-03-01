@@ -1,16 +1,18 @@
-# Containers for CAW
+<img src="doc/Logo.png" width="300" title="CAW">
+# Containers for Cancer Analysis Workflow
 
 [![caw-containers version][version-badge]][version-link] [![Licence][licence-badge]][licence-link] [![nextflow version][nextflow-badge]][nextflow-link]
 
-Nextflow Cancer Analysis Workflow Prototype developed at the [National Genomics Infastructure][ngi-link] at [SciLifeLab Stockholm][scilifelab-stockholm-link], Sweden.
+CAW developed at the [National Genomics Infastructure][ngi-link] at [SciLifeLab Stockholm][scilifelab-stockholm-link], Sweden.
 
 ## Author
 
 - Maxime Garcia (@MaxUlysse)
 
-## Images for tool
+## Containers
 
-For process that needs only one tool, an image is made with the tool to be used for this process.
+For process that needs only one tool, a container is made with the tool to be used for this process, named from the tool.
+For process that needs more than one tool, a container is made with the tools to be used for this process, named from the process.
 
 ### bcftools [![bcftools-docker status][bcftools-docker-badge]][bcftools-docker-link]
 
@@ -27,6 +29,12 @@ For process that needs only one tool, an image is made with the tool to be used 
 - Based on `openjdk:8`
 - Contain **[GATK][gatk-link]** 3.7
 
+### MapReads [![mapreads-docker status][mapreads-docker-badge]][mapreads-docker-link]
+
+- Based on `debian:8.6`
+- Contain **[BWA][bwa-link]** 0.7.8
+- Contain **[SAMTools][samtools-link]** 1.3
+
 ### multiqc [![multiqc-docker status][multiqc-docker-badge]][multiqc-docker-link]
 
 - Based on `openjdk:8`
@@ -42,19 +50,10 @@ For process that needs only one tool, an image is made with the tool to be used 
 - Based on `openjdk:8`
 - Contain **[Picard][picard-link]** 2.0.1
 
-### strelka [![strelka-docker status][strelka-docker-badge]][strelka-docker-link]
+### RunAlleleCount [![runallelecount-docker status][runallelecount-docker-badge]][runallelecount-docker-link]
 
 - Based on `debian:8.6`
-- Contain **[Strelka][strelka-link]** 1.0.15
-
-## Images for process
-
-For process that needs more than one tool, an image is made with the tools to be used for this process.
-
-### MapReads [![mapreads-docker status][mapreads-docker-badge]][mapreads-docker-link]
-
-- Based on `debian:8.6`
-- Contain **[BWA][bwa-link]** 0.7.8
+- Contain **[AlleleCount][AlleleCount-link]** 2.2.0
 - Contain **[SAMTools][samtools-link]** 1.3
 
 ### RunManta [![runmanta-docker status][runmanta-docker-badge]][runmanta-docker-link]
@@ -63,6 +62,17 @@ For process that needs more than one tool, an image is made with the tools to be
 - Contain **[Manta][manta-link]** 1.0
 - Contain **[SAMTools][samtools-link]** 1.3
 
+### snpeff [![snpeff-docker status][snpeff-docker-badge]][snpeff-docker-link]
+
+- Based on `openjdk:8`
+- Contain **[snpEff][snpeff-link]** 4.2
+
+### strelka [![strelka-docker status][strelka-docker-badge]][strelka-docker-link]
+
+- Based on `debian:8.6`
+- Contain **[Strelka][strelka-link]** 1.0.15
+
+[AlleleCount-link]: https://github.com/cancerit/alleleCount
 [bwa-link]: https://github.com/lh3/bwa
 [bcftools-docker-badge]: https://img.shields.io/docker/automated/maxulysse/bcftools.svg
 [bcftools-docker-link]: https://hub.docker.com/r/maxulysse/bcftools
@@ -91,9 +101,14 @@ For process that needs more than one tool, an image is made with the tools to be
 [picard-docker-link]: https://hub.docker.com/r/maxulysse/picard
 [picard-link]: https://github.com/broadinstitute/picard
 [runmanta-docker-badge]: https://img.shields.io/docker/automated/maxulysse/runmanta.svg
+[runallelecount-docker-link]: https://hub.docker.com/r/maxulysse/runallelecount
+[runallelecount-docker-badge]: https://img.shields.io/docker/automated/maxulysse/runallelecount.svg
 [runmanta-docker-link]: https://hub.docker.com/r/maxulysse/runmanta
 [samtools-link]: https://github.com/samtools/samtools
 [scilifelab-stockholm-link]: https://www.scilifelab.se/platforms/ngi/
+[snpeff-docker-badge]: https://img.shields.io/docker/automated/maxulysse/snpeff.svg
+[snpeff-docker-link]: https://hub.docker.com/r/maxulysse/snpeff
+[snpeff-link]: http://snpeff.sourceforge.net/
 [strelka-docker-badge]: https://img.shields.io/docker/automated/maxulysse/strelka.svg
 [strelka-docker-link]: https://hub.docker.com/r/maxulysse/strelka
 [strelka-link]: https://sites.google.com/site/strelkasomaticvariantcaller/home
