@@ -21,7 +21,7 @@
 - [x] RunAlleleCount
 - [ ] RunConvertAlleleCounts
 - [ ] RunAscat
-- [ ] RunSnpeff
+- [x] RunSnpeff
 - [x] BCFTools
 - [x] RunMultiQC
 
