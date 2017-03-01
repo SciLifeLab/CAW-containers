@@ -17,10 +17,12 @@ zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 
 #Setup ENV variables
-ENV SNPEFF_BIN="snpEff_v4_2_core.zip" \
+ENV GENOME="GRCh37.75" \
+SNPEFF_BIN="snpEff_v4_2_core.zip" \
 SNPEFF_HOME="/opt/snpEff"
 
-#Install snpEff
+#Install snpEff and Genome
 RUN wget http://downloads.sourceforge.net/project/snpeff/$SNPEFF_BIN -O /opt/$SNPEFF_BIN \
 && unzip /opt/$SNPEFF_BIN -d /opt/ \
+&& java -jar $SNPEFF_HOME/snpEff.jar download -v $GENOME \
 && rm /opt/$SNPEFF_BIN
