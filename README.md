@@ -111,6 +111,6 @@ For process that needs more than one tool, a container is made with the tools to
 [snpeff-link]: http://snpeff.sourceforge.net/
 [strelka-docker-badge]: https://img.shields.io/docker/automated/maxulysse/strelka.svg
 [strelka-docker-link]: https://hub.docker.com/r/maxulysse/strelka
-[strelka-link]: https://sites.google.com/site/strelkasomaticvariantcaller/home
+[strelka-link]: https://github.com/Illumina/strelka
 [version-badge]: https://img.shields.io/github/release/MaxUlysse/CAW-containers.svg
 [version-link]: https://github.com/MaxUlysse/CAW-containers/releases/latest
