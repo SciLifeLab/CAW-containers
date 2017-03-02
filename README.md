@@ -59,7 +59,7 @@ For process that needs more than one tool, a container is made with the tools to
 ### RunManta [![runmanta-docker status][runmanta-docker-badge]][runmanta-docker-link]
 
 - Based on `debian:8.6`
-- Contain **[Manta][manta-link]** 1.0
+- Contain **[Manta][manta-link]** 1.0.3
 - Contain **[SAMTools][samtools-link]** 1.3
 
 ### snpeff [![snpeff-docker status][snpeff-docker-badge]][snpeff-docker-link]
