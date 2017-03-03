@@ -26,19 +26,16 @@ Maxime Garcia <maxime.garcia@scilifelab.se> [@MaxUlysse]
 ================================================================================
 */
 
+containers = params.containers.split(',').collect {it.trim()}
+docker = (params.docker ? true : false)
+push = (params.docker && params.push ? true : false)
+repository = params.repository
 revision = grabGitRevision() ?: ''
+singularity = (params.singularity ? true : false)
 version = '1.0'
 
 switch (params) {
-  case {params.build} :
-    helpMessage(version, revision)
-    exit 1
-
   case {params.help} :
-    helpMessage(version, revision)
-    exit 1
-
-  case {params.push} :
     helpMessage(version, revision)
     exit 1
 
@@ -49,60 +46,76 @@ switch (params) {
 
 startMessage(version, revision)
 
-containerList = [
-  'bcftools',
-  'fastqc',
-  'gatk',
-  'multiqc',
-  'mutect1',
-  'picard',
-  'mapreads',
-  'runallelecount',
-  'runmanta',
-  'strelka',
-  'samtools',
-  'snpeff'
-]
-
 /*
 ================================================================================
 =                                 P R O C E S S                                =
 ================================================================================
 */
 
-process BuildContainers {
+dockerContainers = containers
+singularityContainers = containers
+
+process BuildDockerContainers {
   tag {container}
 
   input:
-    val container from containerList
+    val container from dockerContainers
 
   output:
-    val container into containerBuilt
+    val container into dockerContainersBuilt
+
+  when: docker
 
   script:
   """
-  docker build -t maxulysse/${container}:${version} $baseDir/${container}/.
+  docker build -t ${repository}/${container}:${version} $baseDir/${container}/.
   """
 }
 
-containerBuilt = containerBuilt.view {"Container built: $it"}
+dockerContainersBuilt = dockerContainersBuilt.view {"Docker container: $it built."}
 
-process PushContainers {
+process BuildSingularityContainers {
   tag {container}
 
   input:
-    val container from containerBuilt
+    val container from singularityContainers
 
   output:
-    val container into containerPushed
+    val container into singularityContainersBuilt
+
+  when: singularity
 
   script:
   """
-  docker push maxulysse/${container}:${version}
+  docker run \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /tmp/${container}:/output \
+  --privileged -t --rm \
+  singularityware/docker2singularity \
+  ${repository}/${container}:${version}
   """
 }
 
-containerPushed = containerPushed.view {"Container pushed: $it"}
+singularityContainersBuilt = singularityContainersBuilt.view {"Singularity container: $it built."}
+
+process PushDockerContainers {
+  tag {container}
+
+  input:
+    val container from dockerContainersBuilt
+
+  output:
+    val container into dockerContainersPushed
+
+  when: docker && push
+
+  script:
+  """
+  docker push ${repository}/${container}:${version}
+  """
+}
+
+dockerContainersPushed = dockerContainersPushed.view {"Docker container: $it pushed"}
 
 /*
 ================================================================================
@@ -149,7 +162,7 @@ def startMessage(version, revision) {
 def versionMessage(version, revision) {
   log.info "CAW-containers"
   log.info "  version $version"
-  log.info ((workflow.commitId) ? "Git info   : $workflow.repository - $workflow.revision [$workflow.commitId]" : "  revision  : $revision")
+  log.info (workflow.commitId ? "Git info   : $workflow.repository - $workflow.revision [$workflow.commitId]" : "  revision  : $revision")
   log.info "Project   : $workflow.projectDir"
   log.info "Directory : $workflow.launchDir"
 }
