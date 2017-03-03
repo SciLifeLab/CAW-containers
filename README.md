@@ -12,8 +12,8 @@ For further information/help contact: maxime.garcia@scilifelab.se or szilveszter
 
 This repo comes with documentation about the different containers, found in the `doc/` directory:
 
-1. [Documentation about containers](docs/CONTAINERS.md)
-2. [Documentation about building](docs/BUILD.md)
+1. [Documentation about containers](doc/CONTAINERS.md)
+2. [Documentation about building](doc/BUILD.md)
 
 ## Author
 
