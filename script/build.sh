@@ -1,32 +1,5 @@
-# TODO
+#!/bin/bash
 
-## Docker images for each process:
-
-- [x] RunFastQC
-- [x] MapReads
-- [x] MergeBams
-- [x] MarkDuplicates
-- [x] CreateIntervals
-- [x] RealignBams
-- [x] CreateRecalibrationTable
-- [x] RecalibrateBam
-- [x] RunHaplotypecaller
-- [x] RunMutect1
-- [x] RunMutect2
-- [ ] RunFreeBayes
-- [ ] RunVardict
-- [x] ConcatVCF
-- [x] RunStrelka
-- [x] RunManta
-- [x] RunAlleleCount
-- [ ] RunConvertAlleleCounts
-- [ ] RunAscat
-- [x] RunSnpeff
-- [x] BCFTools
-- [x] RunMultiQC
-
-## Build and push images:
-```bash
 docker build -t maxulysse/bcftools:1.0 bcftools/.
 docker push maxulysse/bcftools:1.0
 docker build -t maxulysse/fastqc:1.0 fastqc/.
@@ -51,4 +24,3 @@ docker build -t maxulysse/samtools:1.0 samtools/.
 docker push maxulysse/samtools:1.0
 docker build -t maxulysse/snpeff:1.0 snpeff/.
 docker push maxulysse/snpeff:1.0
-```
