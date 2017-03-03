@@ -12,13 +12,14 @@ For further information/help contact: maxime.garcia@scilifelab.se or szilveszter
 
 This repo comes with documentation about the different containers, found in the `doc/` directory:
 
-1\. [Documentation about containers](docs/CONTAINERS.md)
+1. [Documentation about containers](docs/CONTAINERS.md)
+2. [Documentation about building](docs/BUILD.md)
 
 ## Author
+
 - [Maxime Garcia](https://github.com/MaxUlysse)
 
-[![](doc/images/SciLifeLab_logo.png "SciLifeLab")](http://www.scilifelab.se/) [![](doc/images/NGI-final-small.png "NGI")](https://ngisweden.scilifelab.se/)
-
+[![](doc/images/SciLifeLab_logo.png "SciLifeLab")](http://www.scilifelab.se/) [![](doc/images/NGI-final-small.png "NGI")][ngi-link]
 
 [gitter-badge]: https://badges.gitter.im/SciLifeLab/CAW.svg
 [gitter-link]: https://gitter.im/SciLifeLab/CAW
