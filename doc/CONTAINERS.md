@@ -72,8 +72,6 @@ For process that needs more than one tool, a container is made with the tools to
 [gatk-docker-badge]: https://img.shields.io/docker/automated/maxulysse/gatk.svg
 [gatk-docker-link]: https://hub.docker.com/r/maxulysse/gatk
 [gatk-link]: https://github.com/broadgsa/gatk-protected
-[licence-badge]: https://img.shields.io/github/license/MaxUlysse/CAW-containers.svg
-[licence-link]: https://github.com/MaxUlysse/CAW-containers/blob/master/LICENSE
 [manta-link]: https://github.com/Illumina/manta
 [mapreads-docker-badge]: https://img.shields.io/docker/automated/maxulysse/mapreads.svg
 [mapreads-docker-link]: https://hub.docker.com/r/maxulysse/mapreads
@@ -89,9 +87,9 @@ For process that needs more than one tool, a container is made with the tools to
 [picard-docker-badge]: https://img.shields.io/docker/automated/maxulysse/picard.svg
 [picard-docker-link]: https://hub.docker.com/r/maxulysse/picard
 [picard-link]: https://github.com/broadinstitute/picard
-[runmanta-docker-badge]: https://img.shields.io/docker/automated/maxulysse/runmanta.svg
-[runallelecount-docker-link]: https://hub.docker.com/r/maxulysse/runallelecount
 [runallelecount-docker-badge]: https://img.shields.io/docker/automated/maxulysse/runallelecount.svg
+[runallelecount-docker-link]: https://hub.docker.com/r/maxulysse/runallelecount
+[runmanta-docker-badge]: https://img.shields.io/docker/automated/maxulysse/runmanta.svg
 [runmanta-docker-link]: https://hub.docker.com/r/maxulysse/runmanta
 [samtools-link]: https://github.com/samtools/samtools
 [scilifelab-stockholm-link]: https://www.scilifelab.se/platforms/ngi/
