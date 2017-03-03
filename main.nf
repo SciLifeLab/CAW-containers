@@ -30,30 +30,38 @@ revision = grabGitRevision() ?: ''
 version = '1.0'
 
 switch (params) {
-	case {params.help} :
-		helpMessage(version, revision)
-		exit 1
+  case {params.build} :
+    helpMessage(version, revision)
+    exit 1
 
-	case {params.version} :
-		versionMessage(version, revision)
-		exit 1
+  case {params.help} :
+    helpMessage(version, revision)
+    exit 1
+
+  case {params.push} :
+    helpMessage(version, revision)
+    exit 1
+
+  case {params.version} :
+    versionMessage(version, revision)
+    exit 1
 }
 
 startMessage(version, revision)
 
 containerList = [
-	'bcftools',
-	'fastqc',
-	'gatk',
-	'multiqc',
-	'mutect1',
-	'picard',
-	'mapreads',
-	'runallelecount',
-	'runmanta',
-	'strelka',
-	'samtools',
-	'snpeff'
+  'bcftools',
+  'fastqc',
+  'gatk',
+  'multiqc',
+  'mutect1',
+  'picard',
+  'mapreads',
+  'runallelecount',
+  'runmanta',
+  'strelka',
+  'samtools',
+  'snpeff'
 ]
 
 /*
@@ -63,35 +71,35 @@ containerList = [
 */
 
 process BuildContainers {
-	tag {container}
+  tag {container}
 
-	input:
-		val container from containerList
+  input:
+    val container from containerList
 
-	output:
-		val container into containerBuilt
+  output:
+    val container into containerBuilt
 
-	script:
-	"""
-	docker build -t maxulysse/${container}:${version} $baseDir/${container}/.
-	"""
+  script:
+  """
+  docker build -t maxulysse/${container}:${version} $baseDir/${container}/.
+  """
 }
 
 containerBuilt = containerBuilt.view {"Container built: $it"}
 
 process PushContainers {
-	tag {container}
+  tag {container}
 
-	input:
-		val container from containerBuilt
+  input:
+    val container from containerBuilt
 
-	output:
-		val container into containerPushed
+  output:
+    val container into containerPushed
 
-	script:
-	"""
-	docker push maxulysse/${container}:${version}
-	"""
+  script:
+  """
+  docker push maxulysse/${container}:${version}
+  """
 }
 
 containerPushed = containerPushed.view {"Container pushed: $it"}
@@ -103,51 +111,47 @@ containerPushed = containerPushed.view {"Container pushed: $it"}
 */
 
 def grabGitRevision() { // Borrowed from https://github.com/NBISweden/wgs-structvar
-	if (workflow.commitId) { // it's run directly from github
-		return workflow.commitId.substring(0,10)
-	}
-	// Try to find the revision directly from git
-	headPointerFile = file("${baseDir}/.git/HEAD")
-	if (!headPointerFile.exists()) {
-		return ''
-	}
-	ref = headPointerFile.newReader().readLine().tokenize()[1]
-	refFile = file("${baseDir}/.git/$ref")
-	if (!refFile.exists()) {
-		return ''
-	}
-	revision = refFile.newReader().readLine()
-	return revision.substring(0,10)
+  if (workflow.commitId) { // it's run directly from github
+    return workflow.commitId.substring(0,10)
+  }
+  // Try to find the revision directly from git
+  headPointerFile = file("${baseDir}/.git/HEAD")
+  if (!headPointerFile.exists()) {
+    return ''
+  }
+  ref = headPointerFile.newReader().readLine().tokenize()[1]
+  refFile = file("${baseDir}/.git/$ref")
+  if (!refFile.exists()) {
+    return ''
+  }
+  revision = refFile.newReader().readLine()
+  return revision.substring(0,10)
 }
 
 def helpMessage(version, revision) {
-	log.info "CAW-containers ~ $version - revision: $revision"
-	log.info "    Usage:"
-	log.info "       nextflow run MaxUlysse/CAW-containers"
-	log.info "    --help"
-	log.info "       you're reading it"
-	log.info "    --version"
-	log.info "       displays version number"
+  log.info "CAW-containers ~ $version - revision: $revision"
+  log.info "    Usage:"
+  log.info "       nextflow run MaxUlysse/CAW-containers"
+  log.info "    --help"
+  log.info "       you're reading it"
+  log.info "    --version"
+  log.info "       displays version number"
 }
 
 def startMessage(version, revision) {
-	log.info "CAW-containers ~ $version - revision: $revision"
-	log.info "Command line: $workflow.commandLine"
-	log.info "Project Dir : $workflow.projectDir"
-	log.info "Launch Dir  : $workflow.launchDir"
-	log.info "Work Dir    : $workflow.workDir"
+  log.info "CAW-containers ~ $version - revision: $revision"
+  log.info "Command line: $workflow.commandLine"
+  log.info "Project Dir : $workflow.projectDir"
+  log.info "Launch Dir  : $workflow.launchDir"
+  log.info "Work Dir    : $workflow.workDir"
 }
 
 def versionMessage(version, revision) {
-	log.info "CAW-containers"
-	log.info "  version $version"
-	if (workflow.commitId) {
-		log.info "Git info    : $workflow.repository - $workflow.revision [$workflow.commitId]"
-	} else {
-		log.info "  revision  : $revision"
-	}
-	log.info "Project   : $workflow.projectDir"
-	log.info "Directory : $workflow.launchDir"
+  log.info "CAW-containers"
+  log.info "  version $version"
+  log.info ((workflow.commitId) ? "Git info   : $workflow.repository - $workflow.revision [$workflow.commitId]" : "  revision  : $revision")
+  log.info "Project   : $workflow.projectDir"
+  log.info "Directory : $workflow.launchDir"
 }
 
 workflow.onComplete {
