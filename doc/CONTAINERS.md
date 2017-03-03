@@ -1,24 +1,65 @@
-[![](doc/images/CAW-logo.png "CAW")](https://github.com/SciLifeLab/CAW)
+## Containers
 
-# Containers for CAW
+For process that needs only one tool, a container is made with the tool to be used for this process, named from the tool.
+For process that needs more than one tool, a container is made with the tools to be used for this process, named from the process.
 
-[![caw-containers version][version-badge]][version-link] [![Licence][licence-badge]][licence-link] [![nextflow version][nextflow-badge]][nextflow-link] [![Join the chat at https://gitter.im/SciLifeLab/CAW][gitter-badge]][gitter-link]
+### bcftools [![bcftools-docker status][bcftools-docker-badge]][bcftools-docker-link]
 
-CAW is a complete open source pipeline to detect somatic variants from WGS data developed at the [National Genomics Infastructure][ngi-link] at [SciLifeLab Stockholm][scilifelab-stockholm-link], Sweden.
+- Based on `debian:8.6`
+- Contain **[BCFTools][bcftools-link]** 1.3
 
-For further information/help contact: maxime.garcia@scilifelab.se or szilveszter.juhos@scilifelab.se, or join the gitter chat: [gitter.im/SciLifeLab/CAW][gitter-link]
+### fastqc [![fastqc-docker status][fastqc-docker-badge]][fastqc-docker-link]
 
-## Documentation
+- Based on `openjdk:8`
+- Contain **[FastQC][fastqc-link]** 0.11.5
 
-This repo comes with documentation about the different containers, found in the `doc/` directory:
+### gatk [![gatk-docker status][gatk-docker-badge]][gatk-docker-link]
 
-1\. [Documentation about containers](docs/CONTAINERS.md)
+- Based on `openjdk:8`
+- Contain **[GATK][gatk-link]** 3.7
 
-## Author
-- [Maxime Garcia](https://github.com/MaxUlysse)
+### MapReads [![mapreads-docker status][mapreads-docker-badge]][mapreads-docker-link]
 
-[![](doc/images/SciLifeLab_logo.png "SciLifeLab")](http://www.scilifelab.se/) [![](doc/images/NGI-final-small.png "NGI")](https://ngisweden.scilifelab.se/)
+- Based on `debian:8.6`
+- Contain **[BWA][bwa-link]** 0.7.8
+- Contain **[SAMTools][samtools-link]** 1.3
 
+### multiqc [![multiqc-docker status][multiqc-docker-badge]][multiqc-docker-link]
+
+- Based on `openjdk:8`
+- Contain **[MultiQC][multiqc-link]** 0.9
+
+### mutect1 [![mutect1-docker status][mutect1-docker-badge]][mutect1-docker-link]
+
+- Based on `openjdk:7`
+- Contain **[MuTect1][mutect1-link]** 1.5
+
+### picard [![picard-docker status][picard-docker-badge]][picard-docker-link]
+
+- Based on `openjdk:8`
+- Contain **[Picard][picard-link]** 2.0.1
+
+### RunAlleleCount [![runallelecount-docker status][runallelecount-docker-badge]][runallelecount-docker-link]
+
+- Based on `debian:8.6`
+- Contain **[AlleleCount][AlleleCount-link]** 2.2.0
+- Contain **[SAMTools][samtools-link]** 1.3
+
+### RunManta [![runmanta-docker status][runmanta-docker-badge]][runmanta-docker-link]
+
+- Based on `debian:8.6`
+- Contain **[Manta][manta-link]** 1.0.3
+- Contain **[SAMTools][samtools-link]** 1.3
+
+### snpeff [![snpeff-docker status][snpeff-docker-badge]][snpeff-docker-link]
+
+- Based on `openjdk:8`
+- Contain **[snpEff][snpeff-link]** 4.2
+
+### strelka [![strelka-docker status][strelka-docker-badge]][strelka-docker-link]
+
+- Based on `debian:8.6`
+- Contain **[Strelka][strelka-link]** 1.0.15
 
 [AlleleCount-link]: https://github.com/cancerit/alleleCount
 [bwa-link]: https://github.com/lh3/bwa
@@ -31,8 +72,6 @@ This repo comes with documentation about the different containers, found in the 
 [gatk-docker-badge]: https://img.shields.io/docker/automated/maxulysse/gatk.svg
 [gatk-docker-link]: https://hub.docker.com/r/maxulysse/gatk
 [gatk-link]: https://github.com/broadgsa/gatk-protected
-[gitter-badge]: https://badges.gitter.im/SciLifeLab/CAW.svg
-[gitter-link]: https://gitter.im/SciLifeLab/CAW
 [licence-badge]: https://img.shields.io/github/license/MaxUlysse/CAW-containers.svg
 [licence-link]: https://github.com/MaxUlysse/CAW-containers/blob/master/LICENSE
 [manta-link]: https://github.com/Illumina/manta
