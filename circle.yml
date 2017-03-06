@@ -1,0 +1,14 @@
+machine:
+  java:
+    version: openjdk8
+
+  environment:
+    NXF_VER: 0.23.0
+
+dependencies:
+  override:
+  - curl -fsSL get.nextflow.io | bash
+
+test:
+  post:
+    - ./nextflow run . --docker
