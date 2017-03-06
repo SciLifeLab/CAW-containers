@@ -2,6 +2,9 @@ machine:
   java:
     version: openjdk8
 
+  services:
+    - docker
+
   environment:
     NXF_VER: 0.23.0
 
