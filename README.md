@@ -21,17 +21,17 @@ This repo comes with documentation about the different containers, found in the 
 
 [![](doc/images/SciLifeLab_logo.png "SciLifeLab")](http://www.scilifelab.se/) [![](doc/images/NGI-final-small.png "NGI")][ngi-link]
 
-[circleci-badge]: https://circleci.com/gh/MaxUlysse/CAW-containers.svg?style=shield
-[circleci-link]: https://circleci.com/gh/MaxUlysse/CAW-containers
+[circleci-badge]: https://circleci.com/gh/SciLifeLab/CAW-containers.svg?style=shield
+[circleci-link]: https://circleci.com/gh/SciLifeLab/CAW-containers
 [gitter-badge]: https://badges.gitter.im/SciLifeLab/CAW.svg
 [gitter-link]: https://gitter.im/SciLifeLab/CAW
-[licence-badge]: https://img.shields.io/github/license/MaxUlysse/CAW-containers.svg
-[licence-link]: https://github.com/MaxUlysse/CAW-containers/blob/master/LICENSE
+[licence-badge]: https://img.shields.io/github/license/SciLifeLab/CAW-containers.svg
+[licence-link]: https://github.com/SciLifeLab/CAW-containers/blob/master/LICENSE
 [nextflow-badge]: https://img.shields.io/badge/nextflow-%E2%89%A50.22.2-brightgreen.svg
 [nextflow-link]: https://www.nextflow.io/
 [ngi-link]: https://ngisweden.scilifelab.se/
 [scilifelab-stockholm-link]: https://www.scilifelab.se/platforms/ngi/
-[travis-badge]: https://api.travis-ci.org/MaxUlysse/CAW-containers.svg
-[travis-link]: https://travis-ci.org/MaxUlysse/CAW-containers
-[version-badge]: https://img.shields.io/github/release/MaxUlysse/CAW-containers.svg
-[version-link]: https://github.com/MaxUlysse/CAW-containers/releases/latest
+[travis-badge]: https://api.travis-ci.org/SciLifeLab/CAW-containers.svg
+[travis-link]: https://travis-ci.org/SciLifeLab/CAW-containers
+[version-badge]: https://img.shields.io/github/release/SciLifeLab/CAW-containers.svg
+[version-link]: https://github.com/SciLifeLab/CAW-containers/releases/latest
