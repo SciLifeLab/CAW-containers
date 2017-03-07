@@ -10,13 +10,13 @@ vim: syntax=groovy
 Maxime Garcia <maxime.garcia@scilifelab.se> [@MaxUlysse]
 --------------------------------------------------------------------------------
  @Homepage
- https://github.com/MaxUlysse/CAW-containers
+ https://github.com/SciLifeLab/CAW-containers
 --------------------------------------------------------------------------------
  @Documentation
- https://github.com/MaxUlysse/caw/containers/blob/master/README.md
+ https://github.com/SciLifeLab/CAW-containers/blob/master/README.md
 --------------------------------------------------------------------------------
 @Licence
- https://github.com/MaxUlysse/caw/containers/blob/master/LICENSE
+ https://github.com/SciLifeLab/CAW-containers/blob/master/LICENSE
 --------------------------------------------------------------------------------
  Processes overview
  - BuildContainers - Build containers using Docker
@@ -27,6 +27,7 @@ Maxime Garcia <maxime.garcia@scilifelab.se> [@MaxUlysse]
 */
 
 containers = params.containers.split(',').collect {it.trim()}
+containers = (containers == ['all'] ? ['bcftools', 'fastqc', 'gatk', 'multiqc', 'mutect1', 'picard', 'mapreads', 'runallelecount', 'runmanta', 'strelka', 'samtools', 'snpeff'] : containers)
 docker = (params.docker ? true : false)
 push = (params.docker && params.push ? true : false)
 repository = params.repository
@@ -144,9 +145,20 @@ def grabGitRevision() { // Borrowed from https://github.com/NBISweden/wgs-struct
 def helpMessage(version, revision) {
   log.info "CAW-containers ~ $version - revision: $revision"
   log.info "    Usage:"
-  log.info "       nextflow run MaxUlysse/CAW-containers"
+  log.info "       nextflow run SciLifeLab/CAW-containers [--containers]"
+  log.info "          [--docker] [--singularity] [--push]"
+  log.info "    Example:"
+  log.info "      nextflow run . --containers multiqc,fastqc"
+  log.info "    --containers: Choose which containers to build. Default: `all`."
+  log.info "       Possible values:"
+  log.info "         `all`, `bcftools`, `fastqc`, `gatk`, `multiqc`, `mutect1`,"
+  log.info "         `picard`, `mapreads`, `runallelecount`, `runmanta`,"
+  log.info "         `strelka`, `samtools`, `snpeff`"
+  log.info "    --docker: Build containers using Docker (Default)"
   log.info "    --help"
   log.info "       you're reading it"
+  log.info "    --push: Push containers to DockerHub"
+  log.info "    --singularity: Build containers using Singularity"
   log.info "    --version"
   log.info "       displays version number"
 }
