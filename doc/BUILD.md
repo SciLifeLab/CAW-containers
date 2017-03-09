@@ -18,6 +18,8 @@ nextflow run . [--docker] [--singularity] [--push] [--containers] <multiqc,fastq
  - `picard`
  - `mapreads`
  - `runallelecount`
+ - `runconvertallelecounts`
+ - `runascat`
  - `runmanta`
  - `strelka`
  - `samtools`
