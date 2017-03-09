@@ -63,12 +63,16 @@ A container named after the process is made for each process. If a container can
 
 ## samtools [![samtools-docker status][samtools-docker-badge]][samtools-docker-link]
 
+- Based on `debian:8.6`
 - Contain **[samtools][samtools-link]** 1.3
 
 ## strelka [![strelka-docker status][strelka-docker-badge]][strelka-docker-link]
 
 - Based on `debian:8.6`
 - Contain **[Strelka][strelka-link]** 1.0.15
+
+---
+[![](images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link] [![](images/NGI-final-small.png "NGI")][ngi-link]
 
 [allelecount-link]: https://github.com/cancerit/alleleCount
 [bcftools-docker-badge]: https://img.shields.io/docker/automated/maxulysse/bcftools.svg
@@ -108,6 +112,7 @@ A container named after the process is made for each process. If a container can
 [samtools-docker-badge]: https://img.shields.io/docker/automated/maxulysse/samtools.svg
 [samtools-docker-link]: https://hub.docker.com/r/maxulysse/samtools
 [samtools-link]: https://github.com/samtools/samtools
+[scilifelab-link]: http://www.scilifelab.se/
 [scilifelab-stockholm-link]: https://www.scilifelab.se/platforms/ngi/
 [snpeff-docker-badge]: https://img.shields.io/docker/automated/maxulysse/snpeff.svg
 [snpeff-docker-link]: https://hub.docker.com/r/maxulysse/snpeff
