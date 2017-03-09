@@ -27,22 +27,21 @@ Maxime Garcia <maxime.garcia@scilifelab.se> [@MaxUlysse]
 */
 
 containers = params.containers.split(',').collect {it.trim()}
-containers = (containers == ['all'] ? ['bcftools', 'fastqc', 'gatk', 'multiqc', 'mutect1', 'picard', 'mapreads', 'runallelecount', 'runmanta', 'strelka', 'samtools', 'snpeff'] : containers)
-docker = (params.docker ? true : false)
-push = (params.docker && params.push ? true : false)
+containers = containers == ['all'] ? ['bcftools', 'fastqc', 'gatk', 'multiqc', 'mutect1', 'picard', 'mapreads', 'runallelecount', 'runascat', 'runconvertallelecounts', 'runmanta', 'strelka', 'samtools', 'snpeff'] : containers
+docker = params.docker ? true : false
+push = params.docker && params.push ? true : false
 repository = params.repository
 revision = grabGitRevision() ?: ''
-singularity = (params.singularity ? true : false)
+singularity = params.singularity ? true : false
 version = '1.0'
 
-switch (params) {
-  case {params.help} :
-    helpMessage(version, revision)
-    exit 1
-
-  case {params.version} :
-    versionMessage(version, revision)
-    exit 1
+if (params.help) {
+  help_message(version, revision)
+  exit 1
+}
+if (params.version) {
+  version_message(version, revision)
+  exit 1
 }
 
 startMessage(version, revision)
@@ -124,11 +123,11 @@ dockerContainersPushed = dockerContainersPushed.view {"Docker container: $it pus
 ================================================================================
 */
 
-def grabGitRevision() { // Borrowed from https://github.com/NBISweden/wgs-structvar
-  if (workflow.commitId) { // it's run directly from github
+def grabGitRevision() {
+  // Borrowed from https://github.com/NBISweden/wgs-structvar
+  if (workflow.commitId) {
     return workflow.commitId.substring(0,10)
   }
-  // Try to find the revision directly from git
   headPointerFile = file("${baseDir}/.git/HEAD")
   if (!headPointerFile.exists()) {
     return ''
@@ -174,7 +173,7 @@ def startMessage(version, revision) {
 def versionMessage(version, revision) {
   log.info "CAW-containers"
   log.info "  version $version"
-  log.info (workflow.commitId ? "Git info   : $workflow.repository - $workflow.revision [$workflow.commitId]" : "  revision  : $revision")
+  log.info workflow.commitId ? "Git info   : $workflow.repository - $workflow.revision [$workflow.commitId]" : "  revision  : $revision"
   log.info "Project   : $workflow.projectDir"
   log.info "Directory : $workflow.launchDir"
 }
@@ -190,7 +189,7 @@ workflow.onComplete {
 	log.info "Duration    : $workflow.duration"
 	log.info "Success     : $workflow.success"
 	log.info "Exit status : $workflow.exitStatus"
-	log.info "Error report:" + (workflow.errorReport ?: '-')
+	log.info "Error report:" + workflow.errorReport ?: '-'
 }
 
 workflow.onError {
