@@ -14,4 +14,4 @@ dependencies:
 
 test:
   post:
-    - ./nextflow run . --docker --containers bcftools,fastqc,gatk,multiqc,mutect1,picard,mapreads,runallelecount,runascat,runconvertallelecounts,runmanta,strelka,samtools
+    - ./tests/build_all_docker.sh
