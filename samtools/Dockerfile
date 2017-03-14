@@ -1,7 +1,7 @@
 FROM debian:8.6
 
 LABEL author="Maxime Garcia" \
-description="SAMTools 1.3 image for use in CAW" \
+description="SAMTools 1.4 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
 #Install libraries
@@ -10,6 +10,8 @@ build-essential \
 ca-certificates \
 curl \
 git \
+liblzma-dev \
+libbz2-dev \
 libncursesw5-dev \
 libncurses5-dev \
 make \
@@ -17,8 +19,8 @@ zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 
 #Setup ENV variables
-ENV SAMTOOLS_BIN="samtools-1.3.tar.bz2" \
-SAMTOOLS_VERSION="1.3"
+ENV SAMTOOLS_BIN="samtools-1.4.tar.bz2" \
+SAMTOOLS_VERSION="1.4"
 
 #Install SAMTools
 RUN curl -fsSL https://github.com/samtools/samtools/releases/download/$SAMTOOLS_VERSION/$SAMTOOLS_BIN -o /opt/$SAMTOOLS_BIN \
