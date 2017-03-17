@@ -27,7 +27,7 @@ Maxime Garcia <maxime.garcia@scilifelab.se> [@MaxUlysse]
 */
 
 version = '1.0'
-containersList = ['bcftools', 'fastqc', 'gatk', 'multiqc', 'mutect1', 'picard', 'mapreads', 'runallelecount', 'runascat', 'runconvertallelecounts', 'runmanta', 'strelka', 'samtools', 'snpeff']
+containersList = ['bcftools', 'concatvcf', 'fastqc', 'gatk', 'multiqc', 'mutect1', 'picard', 'mapreads', 'runallelecount', 'runascat', 'runconvertallelecounts', 'runmanta', 'strelka', 'samtools', 'snpeff']
 
 containers = params.containers.split(',').collect {it.trim()}
 containers = containers == ['all'] ? containersList : containers
@@ -128,9 +128,6 @@ dockerContainersPushed = dockerContainersPushed.view {"Docker container: $reposi
 ================================================================================
 */
 
-if (!checkContainers(containers,containersList)) {exit 1, 'Unknown container(s), see --help for more information'}
-
-
 def checkContainers(containers, containersList) {
   containerExists = true
   containers.each{
@@ -150,20 +147,10 @@ def checkContainerExistence(container, list) {
 }
 
 def grabGitRevision() {
-  if (workflow.commitId) {
-    return workflow.commitId.substring(0,10)
-  }
-  headPointerFile = file("${baseDir}/.git/HEAD")
-  if (!headPointerFile.exists()) {
-    return ''
-  }
-  ref = headPointerFile.newReader().readLine().tokenize()[1]
-  refFile = file("${baseDir}/.git/$ref")
-  if (!refFile.exists()) {
-    return ''
-  }
-  revision = refFile.newReader().readLine()
-  return revision.substring(0,10)
+  // Borrowed idea from https://github.com/NBISweden/wgs-structvar
+  ref = file("$baseDir/.git/HEAD") ?  file("$baseDir/.git/"+file("$baseDir/.git/HEAD").newReader().readLine().tokenize()[1]) : ''
+
+  return workflow.commitId ? workflow.commitId.substring(0,10) : ref.exists() ? ref.newReader().readLine().substring(0,10) : ''
 }
 
 def helpMessage(version, revision) {
