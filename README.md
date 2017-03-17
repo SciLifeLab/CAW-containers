@@ -1,4 +1,4 @@
-[![](doc/images/CAW-logo.png "CAW")](https://github.com/SciLifeLab/CAW)
+[![](doc/images/CAW-logo.png "CAW")][CAW-site-link]
 
 # Containers for CAW
 
@@ -22,6 +22,7 @@ This repo comes with documentation about the different containers, found in the 
 ---
 [![](doc/images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link] [![](doc/images/NGI-final-small.png "NGI")][ngi-link]
 
+[CAW-site-link]: http://opensource.scilifelab.se/projects/caw/
 [circleci-badge]: https://circleci.com/gh/SciLifeLab/CAW-containers.svg?style=shield
 [circleci-link]: https://circleci.com/gh/SciLifeLab/CAW-containers
 [gitter-badge]: https://badges.gitter.im/SciLifeLab/CAW.svg
