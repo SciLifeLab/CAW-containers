@@ -1,5 +1,5 @@
-# FROM maxulysse/samtools:1.0
-FROM maxulysse/samtools:dev
+FROM maxulysse/samtools:1.1
+# FROM maxulysse/samtools:dev
 
 LABEL author="Maxime Garcia" \
 description="BWA 0.7.8 and SAMTools 1.4 image for use in CAW" \

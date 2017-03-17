@@ -26,9 +26,8 @@ Maxime Garcia <maxime.garcia@scilifelab.se> [@MaxUlysse]
 ================================================================================
 */
 
-version = '1.0'
-containersList = ['bcftools', 'concatvcf', 'fastqc', 'gatk', 'multiqc', 'mutect1', 'picard', 'mapreads', 'runallelecount', 'runascat', 'runconvertallelecounts', 'runmanta', 'strelka', 'samtools', 'snpeff']
-
+version = '1.1'
+containersList = defineContainersList()
 containers = params.containers.split(',').collect {it.trim()}
 containers = containers == ['all'] ? containersList : containers
 docker = params.docker ? true : false
@@ -128,6 +127,15 @@ dockerContainersPushed = dockerContainersPushed.view {"Docker container: $reposi
 ================================================================================
 */
 
+def checkContainerExistence(container, list) {
+  try {assert list.contains(container)}
+  catch (AssertionError ae) {
+    println("Unknown container: $container")
+    return false
+  }
+  return true
+}
+
 def checkContainers(containers, containersList) {
   containerExists = true
   containers.each{
@@ -137,13 +145,8 @@ def checkContainers(containers, containersList) {
   return containerExists ? true : false
 }
 
-def checkContainerExistence(container, list) {
-  try {assert list.contains(container)}
-  catch (AssertionError ae) {
-    println("Unknown container: $container")
-    return false
-  }
-  return true
+def defineContainersList(){
+  return ['bcftools', 'concatvcf', 'fastqc', 'gatk', 'multiqc', 'mutect1', 'picard', 'mapreads', 'runallelecount', 'runascat', 'runconvertallelecounts', 'runmanta', 'strelka', 'samtools', 'snpeff']
 }
 
 def grabGitRevision() {

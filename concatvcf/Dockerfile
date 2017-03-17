@@ -1,5 +1,5 @@
-# FROM maxulysse/gatk:1.0
-FROM maxulysse/gatk:dev
+FROM maxulysse/gatk:1.1
+# FROM maxulysse/gatk:dev
 
 LABEL author="Maxime Garcia" \
 description="GATK 3.7 and Picard 2.0.1 image for use in CAW" \
