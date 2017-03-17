@@ -7,6 +7,11 @@ A container named after the process is made for each process. If a container can
 - Based on `debian:8.6`
 - Contain **[BCFTools][bcftools-link]** 1.3
 
+## concatvcf [![concatvcf-docker status][concatvcf-docker-badge]][concatvcf-docker-link]
+
+- Based on `maxulysse/gatk:1.0`
+- Contain **[Picard][picard-link]** 2.0.1
+
 ## fastqc [![fastqc-docker status][fastqc-docker-badge]][fastqc-docker-link]
 
 - Based on `openjdk:8`
@@ -79,6 +84,8 @@ A container named after the process is made for each process. If a container can
 [bcftools-docker-link]: https://hub.docker.com/r/maxulysse/bcftools
 [bcftools-link]: https://samtools.github.io/bcftools/
 [bwa-link]: https://github.com/lh3/bwa
+[concatvcf-docker-badge]: https://img.shields.io/docker/automated/maxulysse/concatvcf.svg
+[concatvcf-docker-link]: https://hub.docker.com/r/maxulysse/concatvcf
 [fastqc-docker-badge]: https://img.shields.io/docker/automated/maxulysse/fastqc.svg
 [fastqc-docker-link]: https://hub.docker.com/r/maxulysse/fastqc
 [fastqc-link]: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/

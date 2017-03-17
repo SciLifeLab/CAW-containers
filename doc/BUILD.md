@@ -12,6 +12,7 @@ nextflow run . [--docker] [--singularity] [--push] [--containers <container1[,co
  - `all` -  Build all available containers.
  - `bcftools`
  - `fastqc`
+ - `concatvcf`
  - `gatk`
  - `multiqc`
  - `mutect1`
