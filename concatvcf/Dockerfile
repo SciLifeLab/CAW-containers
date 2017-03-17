@@ -1,3 +1,4 @@
+# FROM maxulysse/gatk:1.0
 FROM maxulysse/gatk:dev
 
 LABEL author="Maxime Garcia" \

@@ -1,3 +1,4 @@
+# FROM maxulysse/samtools:1.0
 FROM maxulysse/samtools:dev
 
 LABEL author="Maxime Garcia" \
