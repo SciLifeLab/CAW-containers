@@ -5,7 +5,7 @@ A container named after the process is made for each process. If a container can
 ## bcftools [![bcftools-docker status][bcftools-docker-badge]][bcftools-docker-link]
 
 - Based on `debian:8.6`
-- Contain **[BCFTools][bcftools-link]** 1.3
+- Contain **[BCFTools][bcftools-link]** 1.4
 
 ## concatvcf [![concatvcf-docker status][concatvcf-docker-badge]][concatvcf-docker-link]
 
@@ -69,7 +69,7 @@ A container named after the process is made for each process. If a container can
 ## samtools [![samtools-docker status][samtools-docker-badge]][samtools-docker-link]
 
 - Based on `debian:8.6`
-- Contain **[samtools][samtools-link]** 1.3
+- Contain **[samtools][samtools-link]** 1.4
 
 ## strelka [![strelka-docker status][strelka-docker-badge]][strelka-docker-link]
 
