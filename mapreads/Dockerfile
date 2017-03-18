@@ -1,7 +1,8 @@
-FROM debian:8.6
+FROM maxulysse/samtools:1.1
+# FROM maxulysse/samtools:dev
 
 LABEL author="Maxime Garcia" \
-description="BWA 0.7.8 and SAMTools 1.3 image for use in CAW" \
+description="BWA 0.7.8 and SAMTools 1.4 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
 #Install libraries
@@ -17,9 +18,7 @@ zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 
 #Setup ENV variables
-ENV BWA_VERSION="0.7.8" \
-SAMTOOLS_BIN="samtools-1.3.tar.bz2" \
-SAMTOOLS_VERSION="1.3"
+ENV BWA_VERSION="0.7.8"
 
 #Install BWA and SAMTools
 RUN git clone http://github.com/lh3/bwa.git bwa \
@@ -28,10 +27,4 @@ RUN git clone http://github.com/lh3/bwa.git bwa \
 && make \
 && cp bwa /usr/local/bin/bwa \
 && cd .. \
-&& rm -rf bwa \
-&& curl -fsSL https://github.com/samtools/samtools/releases/download/$SAMTOOLS_VERSION/$SAMTOOLS_BIN -o /opt/$SAMTOOLS_BIN \
-&& tar xvjf /opt/$SAMTOOLS_BIN -C /opt/ \
-&& cd /opt/samtools-$SAMTOOLS_VERSION \
-&& make \
-&& make install \
-&& rm /opt/$SAMTOOLS_BIN
+&& rm -rf bwa

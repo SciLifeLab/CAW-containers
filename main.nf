@@ -10,13 +10,13 @@ vim: syntax=groovy
 Maxime Garcia <maxime.garcia@scilifelab.se> [@MaxUlysse]
 --------------------------------------------------------------------------------
  @Homepage
- https://github.com/MaxUlysse/CAW-containers
+ https://github.com/SciLifeLab/CAW-containers
 --------------------------------------------------------------------------------
  @Documentation
- https://github.com/MaxUlysse/caw/containers/blob/master/README.md
+ https://github.com/SciLifeLab/CAW-containers/blob/master/README.md
 --------------------------------------------------------------------------------
 @Licence
- https://github.com/MaxUlysse/caw/containers/blob/master/LICENSE
+ https://github.com/SciLifeLab/CAW-containers/blob/master/LICENSE
 --------------------------------------------------------------------------------
  Processes overview
  - BuildContainers - Build containers using Docker
@@ -26,25 +26,29 @@ Maxime Garcia <maxime.garcia@scilifelab.se> [@MaxUlysse]
 ================================================================================
 */
 
+version = '1.1'
+containersList = defineContainersList()
 containers = params.containers.split(',').collect {it.trim()}
-docker = (params.docker ? true : false)
-push = (params.docker && params.push ? true : false)
+containers = containers == ['all'] ? containersList : containers
+docker = params.docker ? true : false
+push = params.docker && params.push ? true : false
 repository = params.repository
 revision = grabGitRevision() ?: ''
-singularity = (params.singularity ? true : false)
-version = '1.0'
+tag = params.tag ? params.tag : version
+singularity = params.singularity ? true : false
 
-switch (params) {
-  case {params.help} :
-    helpMessage(version, revision)
-    exit 1
-
-  case {params.version} :
-    versionMessage(version, revision)
-    exit 1
+if (params.help) {
+  help_message(version, revision)
+  exit 1
+}
+if (params.version) {
+  version_message(version, revision)
+  exit 1
 }
 
 startMessage(version, revision)
+
+if (!checkContainers(containers,containersList)) {exit 1, 'Unknown container(s), see --help for more information'}
 
 /*
 ================================================================================
@@ -56,7 +60,7 @@ dockerContainers = containers
 singularityContainers = containers
 
 process BuildDockerContainers {
-  tag {container}
+  tag {repository + "/" + container + ":" + tag}
 
   input:
     val container from dockerContainers
@@ -68,11 +72,11 @@ process BuildDockerContainers {
 
   script:
   """
-  docker build -t ${repository}/${container}:${version} $baseDir/${container}/.
+  docker build -t $repository/$container:$tag $baseDir/$container/.
   """
 }
 
-dockerContainersBuilt = dockerContainersBuilt.view {"Docker container: $it built."}
+dockerContainersBuilt = dockerContainersBuilt.view {"Docker container: $repository/$it:$tag built."}
 
 process BuildSingularityContainers {
   tag {container}
@@ -89,17 +93,17 @@ process BuildSingularityContainers {
   """
   docker run \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  -v /tmp/${container}:/output \
+  -v /tmp/$container:/output \
   --privileged -t --rm \
   singularityware/docker2singularity \
-  ${repository}/${container}:${version}
+  $repository/$container:$tag
   """
 }
 
 singularityContainersBuilt = singularityContainersBuilt.view {"Singularity container: $it built."}
 
 process PushDockerContainers {
-  tag {container}
+  tag {repository + "/" + container + ":" + tag}
 
   input:
     val container from dockerContainersBuilt
@@ -111,11 +115,11 @@ process PushDockerContainers {
 
   script:
   """
-  docker push ${repository}/${container}:${version}
+  docker push $repository/$container:$tag
   """
 }
 
-dockerContainersPushed = dockerContainersPushed.view {"Docker container: $it pushed"}
+dockerContainersPushed = dockerContainersPushed.view {"Docker container: $repository/$it:$tag pushed"}
 
 /*
 ================================================================================
@@ -123,62 +127,88 @@ dockerContainersPushed = dockerContainersPushed.view {"Docker container: $it pus
 ================================================================================
 */
 
-def grabGitRevision() { // Borrowed from https://github.com/NBISweden/wgs-structvar
-  if (workflow.commitId) { // it's run directly from github
-    return workflow.commitId.substring(0,10)
+def checkContainerExistence(container, list) {
+  try {assert list.contains(container)}
+  catch (AssertionError ae) {
+    println("Unknown container: $container")
+    return false
   }
-  // Try to find the revision directly from git
-  headPointerFile = file("${baseDir}/.git/HEAD")
-  if (!headPointerFile.exists()) {
-    return ''
+  return true
+}
+
+def checkContainers(containers, containersList) {
+  containerExists = true
+  containers.each{
+    test = checkContainerExistence(it, containersList)
+    !(test) ? containerExists = false : ""
   }
-  ref = headPointerFile.newReader().readLine().tokenize()[1]
-  refFile = file("${baseDir}/.git/$ref")
-  if (!refFile.exists()) {
-    return ''
-  }
-  revision = refFile.newReader().readLine()
-  return revision.substring(0,10)
+  return containerExists ? true : false
+}
+
+def defineContainersList(){
+  return ['bcftools', 'concatvcf', 'fastqc', 'gatk', 'multiqc', 'mutect1', 'picard', 'mapreads', 'runallelecount', 'runascat', 'runconvertallelecounts', 'runmanta', 'strelka', 'samtools', 'snpeff']
+}
+
+def grabGitRevision() {
+  // Borrowed idea from https://github.com/NBISweden/wgs-structvar
+  ref = file("$baseDir/.git/HEAD") ?  file("$baseDir/.git/"+file("$baseDir/.git/HEAD").newReader().readLine().tokenize()[1]) : ''
+
+  return workflow.commitId ? workflow.commitId.substring(0,10) : ref.exists() ? ref.newReader().readLine().substring(0,10) : ''
 }
 
 def helpMessage(version, revision) {
   log.info "CAW-containers ~ $version - revision: $revision"
   log.info "    Usage:"
-  log.info "       nextflow run MaxUlysse/CAW-containers"
+  log.info "       nextflow run SciLifeLab/CAW-containers [--docker] [--push]"
+  log.info "          [--containers <container1...>] [--singularity]"
+  log.info "          [--tag <tag>] [--repository <repository>]"
+  log.info "    Example:"
+  log.info "      nextflow run . --docker --containers multiqc,fastqc"
+  log.info "    --containers: Choose which containers to build. Default: all."
+  log.info "       Possible values:"
+  log.info "         all, bcftools, fastqc, gatk, multiqc, mutect1,"
+  log.info "         picard, mapreads, runallelecount, runascat,"
+  log.info "         runconvertallelecounts, runmanta, strelka,"
+  log.info "         samtools, snpeff"
+  log.info "    --docker: Build containers using Docker"
   log.info "    --help"
   log.info "       you're reading it"
+  log.info "    --push: Push containers to DockerHub"
+  log.info "    --repository: Build containers under given repository."
+  log.info "       Default: maxulysse"
+  log.info "    --tag`: Build containers using given tag."
+  log.info "       Default is version number."
+  log.info "    --singularity: Build containers using Singularity"
   log.info "    --version"
   log.info "       displays version number"
 }
 
 def startMessage(version, revision) {
-  log.info "CAW-containers ~ $version - revision: $revision"
+  log.info "CAW-containers ~ $version [$revision]"
   log.info "Command line: $workflow.commandLine"
   log.info "Project Dir : $workflow.projectDir"
-  log.info "Launch Dir  : $workflow.launchDir"
-  log.info "Work Dir    : $workflow.workDir"
 }
 
 def versionMessage(version, revision) {
   log.info "CAW-containers"
   log.info "  version $version"
-  log.info (workflow.commitId ? "Git info   : $workflow.repository - $workflow.revision [$workflow.commitId]" : "  revision  : $revision")
+  log.info workflow.commitId ? "Git info   : $workflow.repository - $workflow.revision [$workflow.commitId]" : "  revision  : $revision"
   log.info "Project   : $workflow.projectDir"
   log.info "Directory : $workflow.launchDir"
 }
 
 workflow.onComplete {
-	log.info "N E X T F L O W ~ $workflow.nextflow.version - $workflow.nextflow.build"
-	log.info "CAW-containers ~ $version - revision: $revision"
+	log.info "N E X T F L O W  ~  version $workflow.nextflow.version [$workflow.nextflow.build]"
+  log.info "CAW-containers ~ $version [$revision]"
 	log.info "Command line: $workflow.commandLine"
+  log.info "Tag         : $tag"
+  log.info "Repository  : $repository"
 	log.info "Project Dir : $workflow.projectDir"
-	log.info "Launch Dir  : $workflow.launchDir"
-	log.info "Work Dir    : $workflow.workDir"
 	log.info "Completed at: $workflow.complete"
 	log.info "Duration    : $workflow.duration"
 	log.info "Success     : $workflow.success"
 	log.info "Exit status : $workflow.exitStatus"
-	log.info "Error report:" + (workflow.errorReport ?: '-')
+	log.info "Error report: " + workflow.errorReport ?: '-'
 }
 
 workflow.onError {
