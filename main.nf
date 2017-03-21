@@ -33,20 +33,19 @@ containers = containers == ['all'] ? containersList : containers
 docker = params.docker ? true : false
 push = params.docker && params.push ? true : false
 repository = params.repository
-revision = grabGitRevision() ?: ''
 tag = params.tag ? params.tag : version
 singularity = params.singularity ? true : false
 
 if (params.help) {
-  help_message(version, revision)
+  help_message(version, grabRevision())
   exit 1
 }
 if (params.version) {
-  version_message(version, revision)
+  version_message(version, grabRevision())
   exit 1
 }
 
-startMessage(version, revision)
+startMessage(version, grabRevision())
 
 if (!checkContainers(containers,containersList)) {exit 1, 'Unknown container(s), see --help for more information'}
 
@@ -149,11 +148,8 @@ def defineContainersList(){
   return ['bcftools', 'concatvcf', 'fastqc', 'gatk', 'multiqc', 'mutect1', 'picard', 'mapreads', 'runallelecount', 'runascat', 'runconvertallelecounts', 'runmanta', 'strelka', 'samtools', 'snpeff']
 }
 
-def grabGitRevision() {
-  // Borrowed idea from https://github.com/NBISweden/wgs-structvar
-  ref = file("$baseDir/.git/HEAD") ?  file("$baseDir/.git/"+file("$baseDir/.git/HEAD").newReader().readLine().tokenize()[1]) : ''
-
-  return workflow.commitId ? workflow.commitId.substring(0,10) : ref.exists() ? ref.newReader().readLine().substring(0,10) : ''
+def grabRevision() {
+	return workflow.commitId ? workflow.revision : workflow.scriptId.substring(0,10)
 }
 
 def helpMessage(version, revision) {
