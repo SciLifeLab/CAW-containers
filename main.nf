@@ -149,7 +149,7 @@ def defineContainersList(){
 }
 
 def grabRevision() {
-	return workflow.commitId ? workflow.revision : workflow.scriptId.substring(0,10)
+	return workflow.revision ?: workflow.scriptId.substring(0,10)
 }
 
 def helpMessage(version, revision) {
