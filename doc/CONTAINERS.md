@@ -17,10 +17,25 @@ A container named after the process is made for each process. If a container can
 - Based on `openjdk:8`
 - Contain **[FastQC][fastqc-link]** 0.11.5
 
+## freebayes [![freebayes-docker status][freebayes-docker-badge]][freebayes-docker-link]
+
+- Based on `debian:8.6`
+- Contain **[FreeBayes][freebayes-link]** 1.1.0
+
 ## gatk [![gatk-docker status][gatk-docker-badge]][gatk-docker-link]
 
 - Based on `openjdk:8`
 - Contain **[GATK][gatk-link]** 3.7
+
+## htslib [![htslib-docker status][htslib-docker-badge]][htslib-docker-link]
+
+- Based on `debian:8.6`
+- Contain **[HTSlib][htslib-link]** 1.4
+
+## igvtools [![igvtools-docker status][igvtools-docker-badge]][igvtools-docker-link]
+
+- Based on `openjdk:7`
+- Contain **[IGVTools][igvtools-link]** 2.3.91
 
 ## mapreads [![mapreads-docker status][mapreads-docker-badge]][mapreads-docker-link]
 
@@ -64,7 +79,19 @@ A container named after the process is made for each process. If a container can
 ## snpeff [![snpeff-docker status][snpeff-docker-badge]][snpeff-docker-link]
 
 - Based on `openjdk:8`
-- Contain **[snpEff][snpeff-link]** 4.2
+- Contain **[snpEff][snpeff-link]** 4.3i
+
+## snpeffgrch37 [![snpeffgrch37-docker status][snpeffgrch37-docker-badge]][snpeffgrch37-docker-link]
+
+- Based on `maxulysse/snpeff`
+- Contain **[snpEff][snpeff-link]** 4.3i
+- Contain GRCh37.75
+
+## snpeffgrch38 [![snpeffgrch38-docker status][snpeffgrch38-docker-badge]][snpeffgrch38-docker-link]
+
+- Based on `maxulysse/snpeff`
+- Contain **[snpEff][snpeff-link]** 4.3i
+- Contain GRCh38.86
 
 ## samtools [![samtools-docker status][samtools-docker-badge]][samtools-docker-link]
 
@@ -82,16 +109,25 @@ A container named after the process is made for each process. If a container can
 [allelecount-link]: https://github.com/cancerit/alleleCount
 [bcftools-docker-badge]: https://img.shields.io/docker/automated/maxulysse/bcftools.svg
 [bcftools-docker-link]: https://hub.docker.com/r/maxulysse/bcftools
-[bcftools-link]: https://samtools.github.io/bcftools/
+[bcftools-link]: https://github.com/samtools/bcftools
 [bwa-link]: https://github.com/lh3/bwa
 [concatvcf-docker-badge]: https://img.shields.io/docker/automated/maxulysse/concatvcf.svg
 [concatvcf-docker-link]: https://hub.docker.com/r/maxulysse/concatvcf
 [fastqc-docker-badge]: https://img.shields.io/docker/automated/maxulysse/fastqc.svg
 [fastqc-docker-link]: https://hub.docker.com/r/maxulysse/fastqc
 [fastqc-link]: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+[freebayes-docker-badge]: https://img.shields.io/docker/automated/maxulysse/freebayes.svg
+[freebayes-docker-link]: https://hub.docker.com/r/maxulysse/freebayes
+[freebayes-link]: https://github.com/ekg/freebayes
 [gatk-docker-badge]: https://img.shields.io/docker/automated/maxulysse/gatk.svg
 [gatk-docker-link]: https://hub.docker.com/r/maxulysse/gatk
 [gatk-link]: https://github.com/broadgsa/gatk-protected
+[htslib-docker-badge]: https://img.shields.io/docker/automated/maxulysse/htslib.svg
+[htslib-docker-link]: https://hub.docker.com/r/maxulysse/htslib
+[htslib-link]: https://github.com/samtools/htslib
+[igvtools-docker-badge]: https://img.shields.io/docker/automated/maxulysse/igvtools.svg
+[igvtools-docker-link]: https://hub.docker.com/r/maxulysse/igvtools
+[igvtools-link]: http://software.broadinstitute.org/software/igv/
 [manta-link]: https://github.com/Illumina/manta
 [mapreads-docker-badge]: https://img.shields.io/docker/automated/maxulysse/mapreads.svg
 [mapreads-docker-link]: https://hub.docker.com/r/maxulysse/mapreads
@@ -124,6 +160,10 @@ A container named after the process is made for each process. If a container can
 [snpeff-docker-badge]: https://img.shields.io/docker/automated/maxulysse/snpeff.svg
 [snpeff-docker-link]: https://hub.docker.com/r/maxulysse/snpeff
 [snpeff-link]: http://snpeff.sourceforge.net/
+[snpeffgrch37-docker-badge]: https://img.shields.io/docker/automated/maxulysse/snpeffgrch37.svg
+[snpeffgrch37-docker-link]: https://hub.docker.com/r/maxulysse/snpeffgrch37
+[snpeffgrch38-docker-badge]: https://img.shields.io/docker/automated/maxulysse/snpeffgrch38.svg
+[snpeffgrch38-docker-link]: https://hub.docker.com/r/maxulysse/snpeffgrch38
 [strelka-docker-badge]: https://img.shields.io/docker/automated/maxulysse/strelka.svg
 [strelka-docker-link]: https://hub.docker.com/r/maxulysse/strelka
 [strelka-link]: https://github.com/Illumina/strelka
