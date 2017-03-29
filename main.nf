@@ -145,7 +145,27 @@ def checkContainers(containers, containersList) {
 }
 
 def defineContainersList(){
-  return ['bcftools', 'concatvcf', 'fastqc', 'gatk', 'multiqc', 'mutect1', 'picard', 'mapreads', 'runallelecount', 'runascat', 'runconvertallelecounts', 'runmanta', 'strelka', 'samtools', 'snpeff']
+  return [
+    'bcftools',
+    'concatvcf',
+    'fastqc',
+    'freebayes',
+    'gatk',
+    'htslib',
+    'igvtools',
+    'mapreads',
+    'multiqc',
+    'mutect1',
+    'picard',
+    'runallelecount',
+    'runascat',
+    'runconvertallelecounts',
+    'runmanta',
+    'samtools',
+    'snpeff',
+    'snpeffgrch37',
+    'snpeffgrch38',
+    'strelka']
 }
 
 def grabRevision() {
