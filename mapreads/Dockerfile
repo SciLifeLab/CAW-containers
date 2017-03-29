@@ -11,9 +11,8 @@ build-essential \
 ca-certificates \
 curl \
 git \
-libncursesw5-dev \
 libncurses5-dev \
-make \
+libncursesw5-dev \
 zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 

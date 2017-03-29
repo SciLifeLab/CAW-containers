@@ -9,12 +9,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 build-essential \
 ca-certificates \
 curl \
-git \
-liblzma-dev \
 libbz2-dev \
-libncursesw5-dev \
+liblzma-dev \
 libncurses5-dev \
-make \
+libncursesw5-dev \
 zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 

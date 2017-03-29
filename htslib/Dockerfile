@@ -1,7 +1,7 @@
 FROM debian:8.6
 
 LABEL author="Maxime Garcia" \
-description="SAMTools 1.4 image for use in CAW" \
+description="HTSlib 1.4 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
 #Install libraries
@@ -17,13 +17,13 @@ zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 
 #Setup ENV variables
-ENV SAMTOOLS_BIN="samtools-1.4.tar.bz2" \
-SAMTOOLS_VERSION="1.4"
+ENV HTSLIB_BIN="htslib-1.4.tar.bz2" \
+HTSLIB_VERSION="1.4"
 
-#Install SAMTools
-RUN curl -fsSL https://github.com/samtools/samtools/releases/download/$SAMTOOLS_VERSION/$SAMTOOLS_BIN -o /opt/$SAMTOOLS_BIN \
-&& tar xvjf /opt/$SAMTOOLS_BIN -C /opt/ \
-&& cd /opt/samtools-$SAMTOOLS_VERSION \
+#Install HTSlib
+RUN curl -fsSL https://github.com/samtools/htslib/releases/download/$HTSLIB_VERSION/$HTSLIB_BIN -o /opt/$HTSLIB_BIN \
+&& tar xvjf /opt/$HTSLIB_BIN -C /opt/ \
+&& cd /opt/htslib-$HTSLIB_VERSION \
 && make \
 && make install \
-&& rm /opt/$SAMTOOLS_BIN
+&& rm -rf /opt/$HTSLIB_BIN /opt/htslib-$HTSLIB_VERSION

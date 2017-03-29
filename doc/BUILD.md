@@ -11,20 +11,25 @@ nextflow run . [--docker] [--singularity] [--push] [--containers <container1[,co
 - `--containers`: Choose which containers to build. Default: `all`. Possible values (to separate by commas):
  - `all` -  Build all available containers.
  - `bcftools`
- - `fastqc`
  - `concatvcf`
+ - `fastqc`
+ - `freebayes`
  - `gatk`
+ - `htslib`
+ - `igvtools`
+ - `mapreads`
  - `multiqc`
  - `mutect1`
  - `picard`
- - `mapreads`
  - `runallelecount`
- - `runconvertallelecounts`
  - `runascat`
+ - `runconvertallelecounts`
  - `runmanta`
- - `strelka`
  - `samtools`
  - `snpeff`
+ - `snpeffgrch37`
+ - `snpeffgrch38`
+ - `strelka`
 - `--docker`: Build containers using `Docker`
 - `--repository`: Build containers under given repository. Default: `maxulysse`
 - `--singularity`: Build containers using `Singularity`
