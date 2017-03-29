@@ -14,4 +14,4 @@ dependencies:
 
 test:
   post:
-    - ./tests/build_all_docker.sh
+    - ./test/test_docker.sh
