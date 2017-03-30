@@ -28,4 +28,6 @@ RUN curl -fsSL https://sites.google.com/site/strelkasomaticvariantcaller/home/do
 && rm -f $STRELKA_BIN \
 && cd strelka_workflow-$STRELKA_VERSION \
 && ./configure --prefix=$STRELKA_INSTALL_DIR \
-&& make
+&& make \
+&& cd .. \
+&& rm -rf strelka_workflow-$STRELKA_VERSION
