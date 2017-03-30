@@ -103,6 +103,11 @@ A container named after the process is made for each process. If a container can
 - Based on `debian:8.6`
 - Contain **[Strelka][strelka-link]** 1.0.15
 
+## vep [![vep-docker status][vep-docker-badge]][vep-docker-link]
+
+- Based on `debian:8.6`
+- Contain **[VEP][vep-link]** 1.0.15
+
 ---
 [![](images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link] [![](images/NGI-final-small.png "NGI")][ngi-link]
 
@@ -167,5 +172,8 @@ A container named after the process is made for each process. If a container can
 [strelka-docker-badge]: https://img.shields.io/docker/automated/maxulysse/strelka.svg
 [strelka-docker-link]: https://hub.docker.com/r/maxulysse/strelka
 [strelka-link]: https://github.com/Illumina/strelka
+[vep-docker-badge]: https://img.shields.io/docker/automated/maxulysse/vep.svg
+[vep-docker-link]: https://hub.docker.com/r/maxulysse/vep
+[vep-link]: https://github.com/Ensembl/ensembl-vep
 [version-badge]: https://img.shields.io/github/release/MaxUlysse/CAW-containers.svg
 [version-link]: https://github.com/MaxUlysse/CAW-containers/releases/latest
