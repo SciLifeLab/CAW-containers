@@ -4,7 +4,7 @@ LABEL author="Maxime Garcia" \
 description="VEP 87.27 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
-#Install libraries
+# Install libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
 apache2 \
 build-essential \
@@ -28,34 +28,31 @@ wget \
 && rm -rf /var/lib/apt/lists/* \
 && cpanm DBI DBD::mysql
 
-ENV HOME="/home/vep"
+# Set up ENV variables
 ENV CFLAGS="-fPIC" \
-DEPS="$HOME/src" \
-HTSLIB_DIR="$HOME/src/htslib" \
-KENT_SRC="$HOME/src/kent-335_base/src" \
+DEPS="/home/vep/src" \
+HOME="/home/vep" \
+HTSLIB_DIR="/home/vep/src/htslib" \
+KENT_SRC="/home/vep/src/kent-335_base/src" \
 MACHTYPE="x86_64" \
-PATH="$HOME/src/ensembl-vep:$PATH" \
-PERL5LIB="$PERL5LIB:$HOME/src/bioperl-live-release-1-6-924"
+PATH="/home/vep/src/ensembl-vep:$PATH" \
+PERL5LIB="$PERL5LIB:/home/vep/src/bioperl-live-release-1-6-924:/home/vep/src/ensembl/modules/:/home/vep/src/ensembl-vep/modules/:/home/vep/src/ensembl-variation/modules/:/home/vep/src/ensembl-funcgen/modules/:/home/vep/src/ensembl-io/modules/"
 
-# clone git repositories
-RUN mkdir -p $HOME/src \
-&& cd $HOME/src \
-&& git clone https://github.com/Ensembl/ensembl.git \
-&& git clone https://github.com/Ensembl/ensembl-vep.git \
-&& $HOME/src/ensembl-vep/travisci/get_dependencies.sh
-
-RUN cd $HOME/src \
-&& $HOME/src/ensembl-vep/travisci/build_c.sh \
+# Preparing install
+RUN mkdir -p $DEPS \
+&& cd $DEPS \
+&& git clone https://github.com/Ensembl/ensembl.git ensembl \
+&& git clone https://github.com/Ensembl/ensembl-vep.git ensembl-vep \
+&& git clone https://github.com/Ensembl/ensembl-variation ensembl-variation \
+&& git clone https://github.com/Ensembl/ensembl-funcgen ensembl-funcgen \
+&& git clone https://github.com/Ensembl/ensembl-io ensembl-io \
+&& $DEPS/ensembl-vep/travisci/get_dependencies.sh \
+&& $DEPS/ensembl-vep/travisci/build_c.sh \
 && cd $HTSLIB_DIR \
 && make install \
-&& cpanm --installdeps --with-recommends --notest --cpanfile $HOME/src/ensembl/cpanfile . \
-&& cpanm --installdeps --with-recommends --notest --cpanfile $HOME/src/ensembl-vep/cpanfile .
+&& cpanm --installdeps --with-recommends --notest --cpanfile $DEPS/ensembl/cpanfile . \
+&& cpanm --installdeps --with-recommends --notest --cpanfile $DEPS/ensembl-vep/cpanfile .
 
-# update bash profile
-RUN echo >> $HOME/.profile && \
-echo PATH=$HOME/src/ensembl-vep:\$PATH >> $HOME/.profile && \
-echo export PATH >> $HOME/.profile
-
-# run INSTALL.pl
-RUN chmod u+x $HOME/src/ensembl-vep/*.pl
-RUN $HOME/src/ensembl-vep/INSTALL.pl -a a -l
+# Installing VEP
+RUN chmod u+x $DEPS/ensembl-vep/*.pl
+RUN $DEPS/ensembl-vep/INSTALL.pl -a a -l
