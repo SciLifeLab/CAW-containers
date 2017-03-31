@@ -105,8 +105,20 @@ A container named after the process is made for each process. If a container can
 
 ## vep [![vep-docker status][vep-docker-badge]][vep-docker-link]
 
-- Based on `debian:8.6`
+- Based on `ubuntu:16.04`
 - Contain **[VEP][vep-link]** 1.0.15
+
+## vepgrch37 [![vepgrch37-docker status][vepgrch37-docker-badge]][vepgrch37-docker-link]
+
+- Based on `maxulysse/vep`
+- Contain **[VEP][vep-link]** 1.0.15
+- Contain GRCh37
+
+## vepgrch38 [![vepgrch38-docker status][vepgrch38-docker-badge]][vepgrch38-docker-link]
+
+- Based on `maxulysse/vep`
+- Contain **[VEP][vep-link]** 1.0.15
+- Contain GRCh38
 
 ---
 [![](images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link] [![](images/NGI-final-small.png "NGI")][ngi-link]
@@ -175,5 +187,9 @@ A container named after the process is made for each process. If a container can
 [vep-docker-badge]: https://img.shields.io/docker/automated/maxulysse/vep.svg
 [vep-docker-link]: https://hub.docker.com/r/maxulysse/vep
 [vep-link]: https://github.com/Ensembl/ensembl-vep
+[vepgrch37-docker-badge]: https://img.shields.io/docker/automated/maxulysse/vepgrch37.svg
+[vepgrch37-docker-link]: https://hub.docker.com/r/maxulysse/vepgrch37
+[vepgrch38-docker-badge]: https://img.shields.io/docker/automated/maxulysse/vepgrch38.svg
+[vepgrch38-docker-link]: https://hub.docker.com/r/maxulysse/vepgrch38
 [version-badge]: https://img.shields.io/github/release/MaxUlysse/CAW-containers.svg
 [version-link]: https://github.com/MaxUlysse/CAW-containers/releases/latest
