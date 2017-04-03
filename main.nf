@@ -165,7 +165,11 @@ def defineContainersList(){
     'snpeff',
     'snpeffgrch37',
     'snpeffgrch38',
-    'strelka']
+    'strelka',
+    'vep',
+    'vepgrch37',
+    'vepgrch38'
+    ]
 }
 
 def grabRevision() {

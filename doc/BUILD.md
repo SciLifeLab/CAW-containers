@@ -30,6 +30,9 @@ nextflow run . [--docker] [--singularity] [--push] [--containers <container1[,co
  - `snpeffgrch37`
  - `snpeffgrch38`
  - `strelka`
+ - `vep`
+ - `vepgrch37`
+ - `vepgrch38`
 - `--docker`: Build containers using `Docker`
 - `--repository`: Build containers under given repository. Default: `maxulysse`
 - `--singularity`: Build containers using `Singularity`

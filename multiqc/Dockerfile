@@ -8,15 +8,12 @@ maintainer="maxime.garcia@scilifelab.se"
 RUN apt-get update && apt-get install -y --no-install-recommends \
 gcc \
 python-dev \
-&& rm -rf /var/lib/apt/lists/*
+&& curl -fsSL https://bootstrap.pypa.io/get-pip.py -o /opt/get-pip.py \
+&& python /opt/get-pip.py \
+&& rm -rf /var/lib/apt/lists/* /opt/get-pip.py
 
 #Setup ENV variables
 ENV MULTIQC_VERSION v0.9
-
-#Install pip
-RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py -o /opt/get-pip.py \
-&& python /opt/get-pip.py \
-&& rm /opt/get-pip.py
 
 #Install MultiQC
 RUN pip install git+git://github.com/ewels/MultiQC.git@$MULTIQC_VERSION
