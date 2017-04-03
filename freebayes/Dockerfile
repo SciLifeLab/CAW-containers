@@ -4,7 +4,7 @@ LABEL author="Maxime Garcia" \
 description="FreeBayes 1.1.0 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
-#Install libraries
+# Install libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
 build-essential \
 ca-certificates \
@@ -14,11 +14,11 @@ wget \
 zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 
-#Setup ENV variables
+# Setup ENV variables
 ENV FREEBAYES_BIN="v1.1.0.zip" \
 FREEBAYES_VERSION="v1.1.0"
 
-#Install BCFTools
+# Install BCFTools
 RUN git clone --recursive git://github.com/ekg/freebayes.git freebayes\
 && cd freebayes \
 && git checkout $FREEBAYES_VERSION -b Docker-FreeBayes-$FREEBAYES_VERSION \
@@ -26,5 +26,3 @@ RUN git clone --recursive git://github.com/ekg/freebayes.git freebayes\
 && make install \
 && cd .. \
 && rm -rf freebayes
-
-RUN echo $PATH
