@@ -11,4 +11,5 @@ ENV GENOME="GRCh38"
 RUN mkdir -p $HOME/.vep \
 && cd $HOME/.vep \
 && curl -O ftp://ftp.ensembl.org/pub/release-88/variation/VEP/homo_sapiens_vep_88_$GENOME.tar.gz \
-&& tar xzf homo_sapiens_vep_88_$GENOME.tar.gz
+&& tar xzf homo_sapiens_vep_88_$GENOME.tar.gz \
+&& rm homo_sapiens_vep_88_$GENOME.tar.gz
