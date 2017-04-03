@@ -166,6 +166,7 @@ def defineContainersList(){
     'snpeffgrch37',
     'snpeffgrch38',
     'strelka',
+    'vardictjava',
     'vep',
     'vepgrch37',
     'vepgrch38'
@@ -186,10 +187,11 @@ def helpMessage(version, revision) {
   log.info "      nextflow run . --docker --containers multiqc,fastqc"
   log.info "    --containers: Choose which containers to build. Default: all."
   log.info "       Possible values:"
-  log.info "         all, bcftools, fastqc, gatk, multiqc, mutect1,"
-  log.info "         picard, mapreads, runallelecount, runascat,"
-  log.info "         runconvertallelecounts, runmanta, strelka,"
-  log.info "         samtools, snpeff"
+  log.info "         all, bcftools, concatvcf, fastqc, freebayes, gatk,"
+  log.info "         htslib, igvtools, mapreads, multiqc, mutect1, picard,"
+  log.info "         runallelecount, runascat, runconvertallelecounts,"
+  log.info "         runmanta, samtools, snpeff, snpeffgrch37, snpeffgrch38,"
+  log.info "         strelka, vardictjava vep, vepgrch37, vepgrch38"
   log.info "    --docker: Build containers using Docker"
   log.info "    --help"
   log.info "       you're reading it"
