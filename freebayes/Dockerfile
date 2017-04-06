@@ -19,9 +19,9 @@ ENV FREEBAYES_BIN="v1.1.0.zip" \
 FREEBAYES_VERSION="v1.1.0"
 
 # Install BCFTools
-RUN git clone --recursive git://github.com/ekg/freebayes.git freebayes\
+RUN git clone --recursive git://github.com/ekg/freebayes.git freebayes \
+--branch $FREEBAYES_VERSION \
 && cd freebayes \
-&& git checkout $FREEBAYES_VERSION -b Docker-FreeBayes-$FREEBAYES_VERSION \
 && make \
 && make install \
 && cd .. \
