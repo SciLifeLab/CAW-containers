@@ -20,9 +20,8 @@ VARDICTJAVA_VERSION="1.4.5"
 # Install Picard, VarDict and VarDictJava
 RUN curl -fsSL https://github.com/broadinstitute/picard/releases/download/$PICARD_VERSION/$PICARD_BIN -o /opt/$PICARD_BIN \
 && unzip /opt/$PICARD_BIN -d /opt/ \
-&& rm /opt/$PICARD_BIN \
 && curl -fsSL https://github.com/AstraZeneca-NGS/VarDictJava/archive/$VARDICTJAVA_BIN -o /opt/$VARDICTJAVA_BIN \
 && unzip /opt/$VARDICTJAVA_BIN -d /opt/ \
 && mv /opt/VarDictJava-$VARDICTJAVA_VERSION /opt/VarDictJava \
-&& rm /opt/$VARDICTJAVA_BIN \
+&& rm /opt/$VARDICTJAVA_BIN /opt/$PICARD_BIN \
 && git clone git://github.com/AstraZeneca-NGS/VarDict.git /opt/VarDictJava/VarDict
