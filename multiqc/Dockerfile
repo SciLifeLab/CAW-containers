@@ -4,7 +4,7 @@ LABEL author="Maxime Garcia" \
 description="MultiQC 0.9 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
-#Install libraries
+# Install libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
 gcc \
 python-dev \
@@ -12,8 +12,8 @@ python-dev \
 && python /opt/get-pip.py \
 && rm -rf /var/lib/apt/lists/* /opt/get-pip.py
 
-#Setup ENV variables
+# Setup ENV variables
 ENV MULTIQC_VERSION v0.9
 
-#Install MultiQC
+# Install MultiQC
 RUN pip install git+git://github.com/ewels/MultiQC.git@$MULTIQC_VERSION

@@ -2,7 +2,7 @@
 
 # Containers for CAW
 
-[![caw-containers version][version-badge]][version-link] [![Licence][licence-badge]][licence-link] [![nextflow version][nextflow-badge]][nextflow-link] [![Join the chat at https://gitter.im/SciLifeLab/CAW][gitter-badge]][gitter-link] [![CircleCI status][circleci-badge]][circleci-link] [![Travis status][travis-badge]][travis-link]
+[![caw-containers version][version-badge]][version-link] [![Licence][licence-badge]][licence-link] [![nextflow version][nextflow-badge]][nextflow-link] [![Join the chat at https://gitter.im/SciLifeLab/CAW][gitter-badge]][gitter-link] [![Travis status][travis-badge]][travis-link]
 
 CAW is a complete open source pipeline to detect somatic variants from WGS data developed at the [National Genomics Infastructure][ngi-link] at [SciLifeLab Stockholm][scilifelab-stockholm-link], Sweden.
 
@@ -23,8 +23,6 @@ This repo comes with documentation about the different containers, found in the 
 [![](doc/images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link] [![](doc/images/NGI-final-small.png "NGI")][ngi-link]
 
 [CAW-site-link]: http://opensource.scilifelab.se/projects/caw/
-[circleci-badge]: https://circleci.com/gh/SciLifeLab/CAW-containers.svg?style=shield
-[circleci-link]: https://circleci.com/gh/SciLifeLab/CAW-containers
 [gitter-badge]: https://badges.gitter.im/SciLifeLab/CAW.svg
 [gitter-link]: https://gitter.im/SciLifeLab/CAW
 [licence-badge]: https://img.shields.io/github/license/SciLifeLab/CAW-containers.svg

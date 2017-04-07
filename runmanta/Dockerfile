@@ -1,11 +1,10 @@
 FROM maxulysse/samtools:1.1
-# FROM maxulysse/samtools:dev
 
 LABEL author="Maxime Garcia" \
 description="Manta 1.0.3 and SAMTools 1.4 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
-#Install libraries
+# Install libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
 build-essential \
 ca-certificates \
@@ -16,12 +15,12 @@ python2.4 \
 zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 
-#Setup ENV variables
+# Setup ENV variables
 ENV MANTA_BIN="manta-1.0.3.centos5_x86_64.tar.bz2" \
 MANTA_INSTALL_PATH="/opt/manta-1.0.3" \
 MANTA_VERSION="v1.0.3"
 
-#Install & Manta
+# Install Manta
 RUN curl -fsSL https://github.com/Illumina/manta/releases/download/$MANTA_VERSION/$MANTA_BIN -o /opt/$MANTA_BIN \
 && tar xvjf /opt/$MANTA_BIN -C /opt/ \
 && mv /opt/manta-1.0.3.centos5_x86_64 $MANTA_INSTALL_PATH \

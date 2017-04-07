@@ -4,8 +4,8 @@ LABEL author="Maxime Garcia" \
 description="snpEff 4.3i image with GRCh38.86 genome for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
-#Setup ENV variables
+# Setup ENV variables
 ENV GENOME="GRCh38.86"
 
-#Download Genome
+# Download Genome
 RUN java -jar $SNPEFF_HOME/snpEff.jar download $GENOME
