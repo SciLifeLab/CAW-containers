@@ -71,7 +71,7 @@ process BuildDockerContainers {
 
   script:
   """
-  docker build -t $repository/$container:$tag $baseDir/$container/.
+  docker build -t containers/$repository/$container:$tag $baseDir/$container/.
   """
 }
 
