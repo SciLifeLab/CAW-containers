@@ -20,7 +20,7 @@ zlib1g-dev \
 ENV BCFTOOLS_BIN="bcftools-1.4.tar.bz2" \
 BCFTOOLS_PLUGINS="/usr/local/libexec/bcftools" \
 BCFTOOLS_VERSION="1.4" \
-PATH="/opt/bcftools/bin:$PATH"
+PATH="$PATH:/opt/bcftools/bin"
 
 # Install BCFTools
 RUN curl -fsSL https://github.com/samtools/bcftools/releases/download/$BCFTOOLS_VERSION/$BCFTOOLS_BIN -o /opt/$BCFTOOLS_BIN \
