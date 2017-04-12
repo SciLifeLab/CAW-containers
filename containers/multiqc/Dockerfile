@@ -13,7 +13,7 @@ python-dev \
 && rm -rf /var/lib/apt/lists/* /opt/get-pip.py
 
 # Setup ENV variables
-ENV MULTIQC_VERSION v0.9
+ENV MULTIQC_VERSION="v0.9"
 
 # Install MultiQC
 RUN pip install git+git://github.com/ewels/MultiQC.git@$MULTIQC_VERSION
