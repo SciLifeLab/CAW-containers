@@ -16,4 +16,5 @@ python-dev \
 ENV MULTIQC_VERSION="v0.9"
 
 # Install MultiQC
-RUN pip install git+git://github.com/ewels/MultiQC.git@$MULTIQC_VERSION
+RUN pip install git+git://github.com/ewels/MultiQC.git
+# RUN pip install git+git://github.com/ewels/MultiQC.git@$MULTIQC_VERSION
