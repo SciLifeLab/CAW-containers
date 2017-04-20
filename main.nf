@@ -157,6 +157,7 @@ def defineContainersList(){
     'multiqc',
     'mutect1',
     'picard',
+    'qualimap',
     'runallelecount',
     'runascat',
     'runconvertallelecounts',
