@@ -6,6 +6,7 @@ maintainer="maxime.garcia@scilifelab.se"
 
 # Install libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
+pigz \
 r-base \
 && rm -rf /var/lib/apt/lists/*
 
