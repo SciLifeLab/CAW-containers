@@ -1,7 +1,7 @@
 FROM maxulysse/vep:1.1
 
 LABEL author="Maxime Garcia" \
-description="VEP 87.27 image with GRCH38 genome for use in CAW" \
+description="VEP 88.8 image with GRCH38 genome for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
 # Setup ENV variables

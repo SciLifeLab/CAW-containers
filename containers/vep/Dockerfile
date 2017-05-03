@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 LABEL author="Maxime Garcia" \
-description="VEP 87.27 image for use in CAW" \
+description="VEP 88.8 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
 # Install libraries
@@ -41,11 +41,11 @@ PERL5LIB="$PERL5LIB:/home/vep/src/bioperl-live-release-1-6-924:/home/vep/src/ens
 # Preparing install
 RUN mkdir -p $DEPS \
 && cd $DEPS \
-&& git clone https://github.com/Ensembl/ensembl.git ensembl \
-&& git clone https://github.com/Ensembl/ensembl-vep.git ensembl-vep \
-&& git clone https://github.com/Ensembl/ensembl-variation ensembl-variation \
 && git clone https://github.com/Ensembl/ensembl-funcgen ensembl-funcgen \
 && git clone https://github.com/Ensembl/ensembl-io ensembl-io \
+&& git clone https://github.com/Ensembl/ensembl-variation ensembl-variation \
+&& git clone https://github.com/Ensembl/ensembl-vep ensembl-vep \
+&& git clone https://github.com/Ensembl/ensembl ensembl \
 && $DEPS/ensembl-vep/travisci/get_dependencies.sh \
 && $DEPS/ensembl-vep/travisci/build_c.sh \
 && cd $HTSLIB_DIR \
