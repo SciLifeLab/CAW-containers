@@ -108,11 +108,6 @@ A container named after the process is made for each process. If a container can
 - Based on `debian:8.6`
 - Contain **[Strelka][strelka-link]** 1.0.15
 
-## vardictjava [![vardictjava-docker status][vardictjava-docker-badge]][vardictjava-docker-link]
-
-- Based on `openjdk:8`
-- Contain **[VarDictJava][vardictjava-link]** 1.4.5
-
 ## vep [![vep-docker status][vep-docker-badge]][vep-docker-link]
 
 - Based on `ubuntu:16.04`
@@ -197,9 +192,6 @@ A container named after the process is made for each process. If a container can
 [strelka-docker-badge]: https://img.shields.io/docker/automated/maxulysse/strelka.svg
 [strelka-docker-link]: https://hub.docker.com/r/maxulysse/strelka
 [strelka-link]: https://github.com/Illumina/strelka
-[vardictjava-docker-badge]: https://img.shields.io/docker/automated/maxulysse/vardictjava.svg
-[vardictjava-docker-link]: https://hub.docker.com/r/maxulysse/vardictjava
-[vardictjava-link]: https://github.com/AstraZeneca-NGS/VarDictJava
 [vep-docker-badge]: https://img.shields.io/docker/automated/maxulysse/vep.svg
 [vep-docker-link]: https://hub.docker.com/r/maxulysse/vep
 [vep-link]: https://github.com/Ensembl/ensembl-vep

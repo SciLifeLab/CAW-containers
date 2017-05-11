@@ -167,7 +167,6 @@ def defineContainersList(){
     'snpeffgrch37',
     'snpeffgrch38',
     'strelka',
-    'vardictjava',
     'vep',
     'vepgrch37',
     'vepgrch38'
@@ -192,7 +191,7 @@ def helpMessage(version, revision) {
   log.info "         htslib, igvtools, mapreads, multiqc, mutect1, picard,"
   log.info "         runallelecount, runascat, runconvertallelecounts,"
   log.info "         runmanta, samtools, snpeff, snpeffgrch37, snpeffgrch38,"
-  log.info "         strelka, vardictjava vep, vepgrch37, vepgrch38"
+  log.info "         strelka, vep, vepgrch37, vepgrch38"
   log.info "    --docker: Build containers using Docker"
   log.info "    --help"
   log.info "       you're reading it"
