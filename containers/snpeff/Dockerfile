@@ -1,7 +1,7 @@
 FROM openjdk:8
 
 LABEL author="Maxime Garcia" \
-description="snpEff 4.3i image for use in CAW" \
+description="snpEff 4.3m image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
 # Install libraries
@@ -15,7 +15,7 @@ zlib1g-dev \
 && rm -rf /var/lib/apt/lists/*
 
 # Setup ENV variables
-ENV SNPEFF_BIN="snpEff_v4_3i_core.zip" \
+ENV SNPEFF_BIN="snpEff_v4_3m_core.zip" \
 SNPEFF_HOME="/opt/snpEff"
 
 # Install snpEff
