@@ -189,7 +189,7 @@ def helpMessage(version, revision) {
   log.info "       Possible values:"
   log.info "         all, bcftools, concatvcf, fastqc, freebayes, gatk,"
   log.info "         htslib, igvtools, mapreads, multiqc, mutect1, picard,"
-  log.info "         runallelecount, runascat, runconvertallelecounts,"
+  log.info "         qualimap, runallelecount, runascat, runconvertallelecounts,"
   log.info "         runmanta, samtools, snpeff, snpeffgrch37, snpeffgrch38,"
   log.info "         strelka, vep, vepgrch37, vepgrch38"
   log.info "    --docker: Build containers using Docker"
