@@ -57,6 +57,11 @@ A container named after the process is made for each process. If a container can
 - Based on `openjdk:8`
 - Contain **[Picard][picard-link]** 2.0.1
 
+## qualimap [![qualimap-docker status][qualimap-docker-badge]][qualimap-docker-link]
+
+- Based on `openjdk:8`
+- Contain **[qualimap][qualimap-link]** 2.2.1
+
 ## runallelecount [![runallelecount-docker status][runallelecount-docker-badge]][runallelecount-docker-link]
 
 - Based on `maxulysse/samtools:1.0`
@@ -102,11 +107,6 @@ A container named after the process is made for each process. If a container can
 
 - Based on `debian:8.6`
 - Contain **[Strelka][strelka-link]** 1.0.15
-
-## vardictjava [![vardictjava-docker status][vardictjava-docker-badge]][vardictjava-docker-link]
-
-- Based on `openjdk:8`
-- Contain **[VarDictJava][vardictjava-link]** 1.4.5
 
 ## vep [![vep-docker status][vep-docker-badge]][vep-docker-link]
 
@@ -165,6 +165,9 @@ A container named after the process is made for each process. If a container can
 [picard-docker-badge]: https://img.shields.io/docker/automated/maxulysse/picard.svg
 [picard-docker-link]: https://hub.docker.com/r/maxulysse/picard
 [picard-link]: https://github.com/broadinstitute/picard
+[qualimap-docker-badge]: https://img.shields.io/docker/automated/maxulysse/qualimap.svg
+[qualimap-docker-link]: https://hub.docker.com/r/maxulysse/qualimap
+[qualimap-link]: http://qualimap.bioinfo.cipf.es
 [rcolorbrewer-link]: https://CRAN.R-project.org/package=RColorBrewer
 [runallelecount-docker-badge]: https://img.shields.io/docker/automated/maxulysse/runallelecount.svg
 [runallelecount-docker-link]: https://hub.docker.com/r/maxulysse/runallelecount
@@ -189,9 +192,6 @@ A container named after the process is made for each process. If a container can
 [strelka-docker-badge]: https://img.shields.io/docker/automated/maxulysse/strelka.svg
 [strelka-docker-link]: https://hub.docker.com/r/maxulysse/strelka
 [strelka-link]: https://github.com/Illumina/strelka
-[vardictjava-docker-badge]: https://img.shields.io/docker/automated/maxulysse/vardictjava.svg
-[vardictjava-docker-link]: https://hub.docker.com/r/maxulysse/vardictjava
-[vardictjava-link]: https://github.com/AstraZeneca-NGS/VarDictJava
 [vep-docker-badge]: https://img.shields.io/docker/automated/maxulysse/vep.svg
 [vep-docker-link]: https://hub.docker.com/r/maxulysse/vep
 [vep-link]: https://github.com/Ensembl/ensembl-vep
