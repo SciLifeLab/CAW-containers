@@ -78,7 +78,7 @@ process BuildDockerContainers {
 dockerContainersBuilt = dockerContainersBuilt.view {"Docker container: $repository/$it:$tag built."}
 
 process BuildSingularityContainers {
-  tag {container}
+  tag {repository + "/" + container + ":" + tag}
 
   input:
     val container from singularityContainers
@@ -90,12 +90,8 @@ process BuildSingularityContainers {
 
   script:
   """
-  docker run \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v /tmp/$container:/output \
-  --privileged -t --rm \
-  singularityware/docker2singularity \
-  $repository/$container:$tag
+  sudo singularity create $container-$tag.img
+  sudo singularity import $container-$tag.img docker://$repository/$container:$tag
   """
 }
 
