@@ -35,6 +35,7 @@ push = params.docker && params.push ? true : false
 repository = params.repository
 tag = params.tag ? params.tag : version
 singularity = params.singularity ? true : false
+publishSingularityDir = params.publishSingularityDir
 
 if (params.help) {
   help_message(version, grabRevision())
@@ -80,18 +81,20 @@ dockerContainersBuilt = dockerContainersBuilt.view {"Docker container: $reposito
 process BuildSingularityContainers {
   tag {repository + "/" + container + ":" + tag}
 
+  publishDir "$publishSingularityDir", mode: 'copy'
+
   input:
     val container from singularityContainers
 
   output:
-    val container into singularityContainersBuilt
+    file("*.img") into singularityContainersBuilt
 
   when: singularity
 
   script:
   """
-  sudo singularity create $container-$tag.img
-  sudo singularity import $container-$tag.img docker://$repository/$container:$tag
+  sudo singularity create $container-${tag}.img
+  sudo singularity import $container-${tag}.img docker://$repository/$container:$tag
   """
 }
 
