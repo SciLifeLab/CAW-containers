@@ -31,3 +31,6 @@ RUN curl -fsSL https://sites.google.com/site/strelkasomaticvariantcaller/home/do
 && make \
 && cd .. \
 && rm -rf strelka_workflow-$STRELKA_VERSION
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

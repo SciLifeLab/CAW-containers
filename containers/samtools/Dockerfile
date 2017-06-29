@@ -27,3 +27,6 @@ RUN curl -fsSL https://github.com/samtools/samtools/releases/download/$SAMTOOLS_
 && make \
 && make install \
 && rm /opt/$SAMTOOLS_BIN
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

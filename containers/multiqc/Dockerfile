@@ -17,3 +17,6 @@ ENV MULTIQC_VERSION="v1.0"
 
 # Install MultiQC
 RUN pip install git+git://github.com/ewels/MultiQC.git@$MULTIQC_VERSION
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

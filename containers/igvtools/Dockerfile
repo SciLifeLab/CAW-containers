@@ -13,3 +13,6 @@ RUN curl -fsSL http://data.broadinstitute.org/igv/projects/downloads/$IGVTOOLS_B
 && cd /opt \
 && unzip $IGVTOOLS_BIN \
 && rm $IGVTOOLS_BIN
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

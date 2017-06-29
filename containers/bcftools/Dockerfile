@@ -29,3 +29,6 @@ RUN curl -fsSL https://github.com/samtools/bcftools/releases/download/$BCFTOOLS_
 && make \
 && make prefix=/opt/bcftools install \
 && rm -rf /opt/$BCFTOOLS_BIN /opt/bcftools-$BCFTOOLS_VERSION
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

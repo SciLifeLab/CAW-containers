@@ -56,3 +56,6 @@ RUN mkdir -p $DEPS \
 # Installing VEP
 RUN chmod u+x $DEPS/ensembl-vep/*.pl
 RUN $DEPS/ensembl-vep/INSTALL.pl -a a -l
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

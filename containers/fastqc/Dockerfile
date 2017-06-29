@@ -13,3 +13,6 @@ RUN curl -fsSL http://www.bioinformatics.babraham.ac.uk/projects/fastqc/$FASTQC_
 && chmod 755 /opt/FastQC/fastqc \
 && ln -s /opt/FastQC/fastqc /usr/local/bin/fastqc \
 && rm /opt/$FASTQC_BIN
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

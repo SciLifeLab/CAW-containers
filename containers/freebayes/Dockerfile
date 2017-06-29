@@ -26,3 +26,6 @@ RUN git clone --recursive git://github.com/ekg/freebayes.git freebayes \
 && make install \
 && cd .. \
 && rm -rf freebayes
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw
