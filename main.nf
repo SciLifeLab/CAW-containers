@@ -187,6 +187,7 @@ def helpMessage() {
   log.info "    Usage:"
   log.info "       nextflow run SciLifeLab/CAW-containers [--docker] [--push]"
   log.info "          [--containers <container1...>] [--singularity]"
+  log.info "          [--singularityPublishDir <path>]"
   log.info "          [--tag <tag>] [--repository <repository>]"
   log.info "    Example:"
   log.info "      nextflow run . --docker --containers multiqc,fastqc"
@@ -207,9 +208,9 @@ def helpMessage() {
   log.info "    --repository: Build containers under given repository"
   log.info "       Default: maxulysse"
   log.info "    --singularity: Build containers using Singularity"
-  log.info "       Default: false"
-  log.info "    --singularityPublishDir: Select where to download containers"
   log.info "       Default (version number): " + version
+  log.info "    --singularityPublishDir: Select where to download containers"
+  log.info "       Default: $PWD"
   log.info "    --tag`: Build containers using given tag"
   log.info "       Default (version number): " + version
   log.info "    --version"
