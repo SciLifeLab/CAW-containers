@@ -14,3 +14,6 @@ RUN curl -fsSL https://github.com/broadinstitute/mutect/releases/download/$MUTEC
 && unzip /opt/$MUTECT_BIN -d $MUTECT_HOME \
 && rm /opt/$MUTECT_BIN \
 && mv $MUTECT_HOME/muTect-$MUTECT_VERSION.jar $MUTECT_HOME/muTect.jar
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

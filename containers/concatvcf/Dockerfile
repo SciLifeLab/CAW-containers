@@ -8,3 +8,6 @@ maintainer="maxime.garcia@scilifelab.se"
 RUN apt-get update && apt-get install -y --no-install-recommends \
 pigz \
 && rm -rf /var/lib/apt/lists/*
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

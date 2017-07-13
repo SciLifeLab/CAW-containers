@@ -13,3 +13,6 @@ PATH="$PATH:/opt/qualimap"
 RUN curl -fsSL https://bitbucket.org/kokonech/qualimap/downloads/$QUALIMAP_BIN -o /opt/$QUALIMAP_BIN \
 && unzip /opt/$QUALIMAP_BIN -d /opt/ \
 && mv /opt/qualimap_$QUALIMAP_VERSION /opt/qualimap
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw
