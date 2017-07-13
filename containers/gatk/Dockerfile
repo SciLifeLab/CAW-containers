@@ -13,3 +13,6 @@ COPY $GATK_BIN $GATK_HOME/$GATK_BIN
 RUN cd $GATK_HOME \
 && tar -jxf $GATK_BIN \
 && rm $GATK_BIN
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

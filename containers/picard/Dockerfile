@@ -13,3 +13,6 @@ PICARD_VERSION="2.0.1"
 RUN curl -fsSL https://github.com/broadinstitute/picard/releases/download/$PICARD_VERSION/$PICARD_BIN -o /opt/$PICARD_BIN \
 && unzip /opt/$PICARD_BIN -d /opt/ \
 && rm /opt/$PICARD_BIN
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

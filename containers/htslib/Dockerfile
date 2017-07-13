@@ -27,3 +27,6 @@ RUN curl -fsSL https://github.com/samtools/htslib/releases/download/$HTSLIB_VERS
 && make \
 && make install \
 && rm -rf /opt/$HTSLIB_BIN /opt/htslib-$HTSLIB_VERSION
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw

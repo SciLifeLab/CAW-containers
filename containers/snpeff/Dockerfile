@@ -22,3 +22,6 @@ SNPEFF_HOME="/opt/snpEff"
 RUN wget http://downloads.sourceforge.net/project/snpeff/$SNPEFF_BIN -O /opt/$SNPEFF_BIN \
 && unzip /opt/$SNPEFF_BIN -d /opt/ \
 && rm /opt/$SNPEFF_BIN
+
+# Create UPPMAX directories
+RUN mkdir /pica /proj /sw
