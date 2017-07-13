@@ -35,18 +35,18 @@ push = params.docker && params.push ? true : false
 repository = params.repository
 tag = params.tag ? params.tag : version
 singularity = params.singularity ? true : false
-publishSingularityDir = params.publishSingularityDir
+singularityPublishDir = params.singularity && params.singularityPublishDir ?: "."
 
 if (params.help) {
-  help_message(version, grabRevision())
+  helpMessage()
   exit 1
 }
 if (params.version) {
-  version_message(version, grabRevision())
+  versionMessage()
   exit 1
 }
 
-startMessage(version, grabRevision())
+startMessage()
 
 if (!checkContainers(containers,containersList)) {exit 1, 'Unknown container(s), see --help for more information'}
 
@@ -81,7 +81,7 @@ dockerContainersBuilt = dockerContainersBuilt.view {"Docker container: $reposito
 process BuildSingularityContainers {
   tag {repository + "/" + container + ":" + tag}
 
-  publishDir publishSingularityDir, mode: 'copy'
+  publishDir singularityPublishDir, mode: 'copy'
 
   input:
     val container from singularityContainers
@@ -123,6 +123,10 @@ dockerContainersPushed = dockerContainersPushed.view {"Docker container: $reposi
 =                               F U N C T I O N S                              =
 ================================================================================
 */
+def cawContainersMessage() {
+  // Display CAW message
+  log.info "CAW-containers ~ $version - " + this.grabRevision() + (workflow.commitId ? " [$workflow.commitId]" : "")
+}
 
 def checkContainerExistence(container, list) {
   try {assert list.contains(container)}
@@ -143,6 +147,7 @@ def checkContainers(containers, containersList) {
 }
 
 def defineContainersList(){
+  // Return list of authorized containers
   return [
     'bcftools',
     'concatvcf',
@@ -172,18 +177,21 @@ def defineContainersList(){
 }
 
 def grabRevision() {
-	return workflow.revision ?: workflow.scriptId.substring(0,10)
+  // Return the same string executed from github or not
+  return workflow.revision ?: workflow.commitId ?: workflow.scriptId.substring(0,10)
 }
 
-def helpMessage(version, revision) {
-  log.info "CAW-containers ~ $version - revision: $revision"
+def helpMessage() {
+  // Display help message
+  this.cawContainersMessage()
   log.info "    Usage:"
   log.info "       nextflow run SciLifeLab/CAW-containers [--docker] [--push]"
   log.info "          [--containers <container1...>] [--singularity]"
   log.info "          [--tag <tag>] [--repository <repository>]"
   log.info "    Example:"
   log.info "      nextflow run . --docker --containers multiqc,fastqc"
-  log.info "    --containers: Choose which containers to build. Default: all."
+  log.info "    --containers: Choose which containers to build"
+  log.info "       Default: all"
   log.info "       Possible values:"
   log.info "         all, bcftools, concatvcf, fastqc, freebayes, gatk,"
   log.info "         htslib, igvtools, mapreads, multiqc, mutect1, picard,"
@@ -191,47 +199,65 @@ def helpMessage(version, revision) {
   log.info "         runmanta, samtools, snpeff, snpeffgrch37, snpeffgrch38,"
   log.info "         strelka, vep, vepgrch37, vepgrch38"
   log.info "    --docker: Build containers using Docker"
+  log.info "       Default: false"
   log.info "    --help"
   log.info "       you're reading it"
   log.info "    --push: Push containers to DockerHub"
-  log.info "    --repository: Build containers under given repository."
+  log.info "       Default: false"
+  log.info "    --repository: Build containers under given repository"
   log.info "       Default: maxulysse"
-  log.info "    --tag`: Build containers using given tag."
-  log.info "       Default is version number."
   log.info "    --singularity: Build containers using Singularity"
+  log.info "       Default: false"
+  log.info "    --singularityPublishDir: Select where to download containers"
+  log.info "       Default (version number): " + version
+  log.info "    --tag`: Build containers using given tag"
+  log.info "       Default (version number): " + version
   log.info "    --version"
-  log.info "       displays version number"
+  log.info "       displays version number and more informations"
 }
 
-def startMessage(version, revision) {
-  log.info "CAW-containers ~ $version [$revision]"
-  log.info "Command line: $workflow.commandLine"
+def minimalInformationMessage() {
+  // Minimal information message
+  log.info "Command Line: $workflow.commandLine"
   log.info "Project Dir : $workflow.projectDir"
+  log.info "Launch Dir  : $workflow.launchDir"
+  log.info "Work Dir    : $workflow.workDir"
+  log.info "Containers  : " + containers.join(', ')
 }
 
-def versionMessage(version, revision) {
+def nextflowMessage() {
+  // Nextflow message (version + build)
+  log.info "N E X T F L O W  ~  version $workflow.nextflow.version $workflow.nextflow.build"
+}
+
+def startMessage() {
+  // Display start message
+  this.cawContainersMessage()
+  this.minimalInformationMessage()
+}
+
+def versionMessage() {
+  // Display version message
   log.info "CAW-containers"
-  log.info "  version $version"
-  log.info workflow.commitId ? "Git info   : $workflow.repository - $workflow.revision [$workflow.commitId]" : "  revision  : $revision"
-  log.info "Project   : $workflow.projectDir"
-  log.info "Directory : $workflow.launchDir"
+  log.info "  version   : $version"
+  log.info workflow.commitId ? "Git info    : $workflow.repository - $workflow.revision [$workflow.commitId]" : "  revision  : " + this.grabRevision()
 }
 
 workflow.onComplete {
-	log.info "N E X T F L O W  ~  version $workflow.nextflow.version [$workflow.nextflow.build]"
-  log.info "CAW-containers ~ $version [$revision]"
-	log.info "Command line: $workflow.commandLine"
-  log.info "Tag         : $tag"
-  log.info "Repository  : $repository"
-	log.info "Project Dir : $workflow.projectDir"
-	log.info "Completed at: $workflow.complete"
-	log.info "Duration    : $workflow.duration"
-	log.info "Success     : $workflow.success"
-	log.info "Exit status : $workflow.exitStatus"
-	log.info "Error report: " + workflow.errorReport ?: '-'
+  // Display complete message
+  this.nextflowMessage()
+  this.cawContainersMessage()
+  this.minimalInformationMessage()
+  log.info "Completed at: $workflow.complete"
+  log.info "Duration    : $workflow.duration"
+  log.info "Success     : $workflow.success"
+  log.info "Exit status : $workflow.exitStatus"
+  log.info "Error report: " + (workflow.errorReport ?: '-')
 }
 
 workflow.onError {
-	log.info "CAW-containers"
-	log.info "Workflow execution stopped with the following message: $workflow.errorMessage"
+  // Display error message
+  this.nextflowMessage()
+  this.cawContainersMessage()
+  log.info "Workflow execution stopped with the following message: " + workflow.errorMessage
 }
