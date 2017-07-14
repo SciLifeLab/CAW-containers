@@ -34,7 +34,7 @@ A container named after the process is made for each process. If a container can
 
 ## igvtools [![igvtools-docker status][igvtools-docker-badge]][igvtools-docker-link]
 
-- Based on `openjdk:7`
+- Based on `openjdk:8`
 - Contain **[IGVTools][igvtools-link]** 2.3.91
 
 ## mapreads [![mapreads-docker status][mapreads-docker-badge]][mapreads-docker-link]
@@ -81,6 +81,11 @@ A container named after the process is made for each process. If a container can
 - Based on `maxulysse/samtools:1.0`
 - Contain **[Manta][manta-link]** 1.0.3
 
+## samtools [![samtools-docker status][samtools-docker-badge]][samtools-docker-link]
+
+- Based on `debian:8.6`
+- Contain **[samtools][samtools-link]** 1.4
+
 ## snpeff [![snpeff-docker status][snpeff-docker-badge]][snpeff-docker-link]
 
 - Based on `openjdk:8`
@@ -97,11 +102,6 @@ A container named after the process is made for each process. If a container can
 - Based on `maxulysse/snpeff`
 - Contain **[snpEff][snpeff-link]** 4.3i
 - Contain GRCh38.86
-
-## samtools [![samtools-docker status][samtools-docker-badge]][samtools-docker-link]
-
-- Based on `debian:8.6`
-- Contain **[samtools][samtools-link]** 1.4
 
 ## strelka [![strelka-docker status][strelka-docker-badge]][strelka-docker-link]
 

@@ -24,6 +24,7 @@ nextflow run . [--docker] [--singularity] [--singularityPublishDir <path>] [--pu
  - `multiqc`
  - `mutect1`
  - `picard`
+ - `qualimap`
  - `runallelecount`
  - `runascat`
  - `runconvertallelecounts`
