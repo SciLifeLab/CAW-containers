@@ -35,7 +35,7 @@ push = params.docker && params.push ? true : false
 repository = params.repository
 tag = params.tag ? params.tag : version
 singularity = params.singularity ? true : false
-singularityPublishDir = params.singularity && params.singularityPublishDir ?: "."
+singularityPublishDir = params.singularity && params.singularityPublishDir ? params.singularityPublishDir : "."
 
 if (params.help) {
   helpMessage()
