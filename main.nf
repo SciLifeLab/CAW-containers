@@ -78,7 +78,7 @@ process BuildDockerContainers {
 
 dockerContainersBuilt = dockerContainersBuilt.view {"Docker container: $repository/$it:$tag built."}
 
-process BuildSingularityContainers {
+process PullSingularityContainers {
   tag {repository + "/" + container + ":" + tag}
 
   publishDir singularityPublishDir, mode: 'copy'
@@ -87,7 +87,7 @@ process BuildSingularityContainers {
     val container from singularityContainers
 
   output:
-    file("*.img") into singularityContainersBuilt
+    file("*.img") into singularityContainersPulled
 
   when: singularity
 
@@ -97,7 +97,7 @@ process BuildSingularityContainers {
   """
 }
 
-singularityContainersBuilt = singularityContainersBuilt.view {"Singularity container: $it built."}
+singularityContainersPulled = singularityContainersPulled.view {"Singularity container: $it pulled."}
 
 process PushDockerContainers {
   tag {repository + "/" + container + ":" + tag}
