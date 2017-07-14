@@ -1,4 +1,4 @@
-FROM openjdk:7
+FROM openjdk:8
 
 LABEL author="Maxime Garcia" \
 description="IGVtools 2.3.91 image for use in CAW" \
