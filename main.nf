@@ -81,7 +81,7 @@ dockerContainersBuilt = dockerContainersBuilt.view {"Docker container: $reposito
 process PullSingularityContainers {
   tag {repository + "/" + container + ":" + tag}
 
-  publishDir singularityPublishDir, mode: 'copy'
+  publishDir singularityPublishDir, mode: 'move'
 
   input:
     val container from singularityContainers
