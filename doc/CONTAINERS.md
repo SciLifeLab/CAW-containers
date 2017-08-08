@@ -111,18 +111,18 @@ A container named after the process is made for each process. If a container can
 ## vep [![vep-docker status][vep-docker-badge]][vep-docker-link]
 
 - Based on `ubuntu:16.04`
-- Contain **[VEP][vep-link]** 1.0.15
+- Contain **[VEP][vep-link]** v89.7
 
 ## vepgrch37 [![vepgrch37-docker status][vepgrch37-docker-badge]][vepgrch37-docker-link]
 
 - Based on `maxulysse/vep`
-- Contain **[VEP][vep-link]** 1.0.15
+- Contain **[VEP][vep-link]** v89.7
 - Contain GRCh37
 
 ## vepgrch38 [![vepgrch38-docker status][vepgrch38-docker-badge]][vepgrch38-docker-link]
 
 - Based on `maxulysse/vep`
-- Contain **[VEP][vep-link]** 1.0.15
+- Contain **[VEP][vep-link]** v89.7
 - Contain GRCh38
 
 ---
