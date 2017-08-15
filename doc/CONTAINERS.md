@@ -126,7 +126,8 @@ A container named after the process is made for each process. If a container can
 - Contain GRCh38
 
 ---
-[![](images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link] [![](images/NGI-final-small.png "NGI")][ngi-link]
+[![](images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link] [![](images/NGI_logo.png "NGI")][ngi-link]
+[![](images/NBIS_logo.png "NBIS")][nbis-link]
 
 [allelecount-link]: https://github.com/cancerit/alleleCount
 [bcftools-docker-badge]: https://img.shields.io/docker/automated/maxulysse/bcftools.svg
@@ -159,6 +160,7 @@ A container named after the process is made for each process. If a container can
 [mutect1-docker-badge]: https://img.shields.io/docker/automated/maxulysse/mutect1.svg
 [mutect1-docker-link]: https://hub.docker.com/r/maxulysse/mutect1
 [mutect1-link]: https://github.com/broadinstitute/mutect
+[nbis-link]: https://www.nbis.se/
 [nextflow-badge]: https://img.shields.io/badge/nextflow-%E2%89%A50.22.2-brightgreen.svg
 [nextflow-link]: https://www.nextflow.io/
 [ngi-link]: https://ngisweden.scilifelab.se/
@@ -180,7 +182,7 @@ A container named after the process is made for each process. If a container can
 [samtools-docker-badge]: https://img.shields.io/docker/automated/maxulysse/samtools.svg
 [samtools-docker-link]: https://hub.docker.com/r/maxulysse/samtools
 [samtools-link]: https://github.com/samtools/samtools
-[scilifelab-link]: http://www.scilifelab.se/
+[scilifelab-link]: https://www.scilifelab.se/
 [scilifelab-stockholm-link]: https://www.scilifelab.se/platforms/ngi/
 [snpeff-docker-badge]: https://img.shields.io/docker/automated/maxulysse/snpeff.svg
 [snpeff-docker-link]: https://hub.docker.com/r/maxulysse/snpeff
