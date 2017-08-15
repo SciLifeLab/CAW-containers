@@ -52,7 +52,8 @@ nextflow run . --docker --singularity --push --containers multiqc,fastqc
 ```
 
 ---
-[![](images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link] [![](images/NGI_logo.png "NGI")][ngi-link]
+[![](images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link]
+[![](images/NGI_logo.png "NGI")][ngi-link]
 [![](images/NBIS_logo.png "NBIS")][nbis-link]
 
 [nbis-link]: https://www.nbis.se/

@@ -20,7 +20,8 @@ This repo comes with documentation about the different containers, found in the 
 - [Maxime Garcia](https://github.com/MaxUlysse)
 
 ---
-[![](doc/images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link] [![](doc/images/NGI_logo.png "NGI")][ngi-link]
+[![](doc/images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link]
+[![](doc/images/NGI_logo.png "NGI")][ngi-link]
 [![](doc/images/NBIS_logo.png "NBIS")][nbis-link]
 
 [caw-site-link]: http://opensource.scilifelab.se/projects/caw/
