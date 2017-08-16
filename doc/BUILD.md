@@ -12,31 +12,31 @@ nextflow run . [--docker] [--singularity] [--singularityPublishDir <path>] [--pu
 ```
 
 - `--containers`: Choose which containers to build. Default: `all`. Possible values (to separate by commas):
- - `all` -  Build all available containers.
- - `bcftools`
- - `concatvcf`
- - `fastqc`
- - `freebayes`
- - `gatk`
- - `htslib`
- - `igvtools`
- - `mapreads`
- - `multiqc`
- - `mutect1`
- - `picard`
- - `qualimap`
- - `runallelecount`
- - `runascat`
- - `runconvertallelecounts`
- - `runmanta`
- - `samtools`
- - `snpeff` this container serves as a base for `snpeffgrch37` and `snpeffgrch38`
- - `snpeffgrch37`
- - `snpeffgrch38`
- - `strelka`
- - `vep` this container serves as a base for `vepgrch37` and `vepgrch38`
- - `vepgrch37`
- - `vepgrch38`
+  - `all` -  Build all available containers.
+  - `bcftools`
+  - `concatvcf`
+  - `fastqc`
+  - `freebayes`
+  - `gatk`
+  - `htslib`
+  - `igvtools`
+  - `mapreads`
+  - `multiqc`
+  - `mutect1`
+  - `picard`
+  - `qualimap`
+  - `runallelecount`
+  - `runascat`
+  - `runconvertallelecounts`
+  - `runmanta`
+  - `samtools`
+  - `snpeff` this container serves as a base for `snpeffgrch37` and `snpeffgrch38`
+  - `snpeffgrch37`
+  - `snpeffgrch38`
+  - `strelka`
+  - `vep` this container serves as a base for `vepgrch37` and `vepgrch38`
+  - `vepgrch37`
+  - `vepgrch38`
 
 - `--docker`: Build containers using `Docker`
 - `--push`: Push containers to `DockerHub`
