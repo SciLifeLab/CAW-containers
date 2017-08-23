@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM debian:8.6
 
 LABEL author="Maxime Garcia" \
 description="VEP 89.7 image for use in CAW" \

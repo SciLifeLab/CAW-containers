@@ -9,12 +9,12 @@ A container named after the process is made for each process. If a container can
 
 ## concatvcf [![concatvcf-docker status][concatvcf-docker-badge]][concatvcf-docker-link]
 
-- Based on `maxulysse/gatk:1.0`
+- Based on `maxulysse/gatk:1.1`
 - Contain **[Picard][picard-link]** 2.0.1
 
 ## fastqc [![fastqc-docker status][fastqc-docker-badge]][fastqc-docker-link]
 
-- Based on `openjdk:8`
+- Based on `openjdk:8-slim`
 - Contain **[FastQC][fastqc-link]** 0.11.5
 
 ## freebayes [![freebayes-docker status][freebayes-docker-badge]][freebayes-docker-link]
@@ -24,7 +24,7 @@ A container named after the process is made for each process. If a container can
 
 ## gatk [![gatk-docker status][gatk-docker-badge]][gatk-docker-link]
 
-- Based on `openjdk:8`
+- Based on `openjdk:8-slim`
 - Contain **[GATK][gatk-link]** 3.7
 
 ## htslib [![htslib-docker status][htslib-docker-badge]][htslib-docker-link]
@@ -34,7 +34,7 @@ A container named after the process is made for each process. If a container can
 
 ## igvtools [![igvtools-docker status][igvtools-docker-badge]][igvtools-docker-link]
 
-- Based on `openjdk:8`
+- Based on `openjdk:8-slim`
 - Contain **[IGVTools][igvtools-link]** 2.3.91
 
 ## mapreads [![mapreads-docker status][mapreads-docker-badge]][mapreads-docker-link]
@@ -44,7 +44,7 @@ A container named after the process is made for each process. If a container can
 
 ## multiqc [![multiqc-docker status][multiqc-docker-badge]][multiqc-docker-link]
 
-- Based on `openjdk:8`
+- Based on `openjdk:8-slim`
 - Contain **[MultiQC][multiqc-link]** 0.9
 
 ## mutect1 [![mutect1-docker status][mutect1-docker-badge]][mutect1-docker-link]
@@ -54,12 +54,12 @@ A container named after the process is made for each process. If a container can
 
 ## picard [![picard-docker status][picard-docker-badge]][picard-docker-link]
 
-- Based on `openjdk:8`
+- Based on `openjdk:8-slim`
 - Contain **[Picard][picard-link]** 2.0.1
 
 ## qualimap [![qualimap-docker status][qualimap-docker-badge]][qualimap-docker-link]
 
-- Based on `openjdk:8`
+- Based on `openjdk:8-slim`
 - Contain **[qualimap][qualimap-link]** 2.2.1
 
 ## runallelecount [![runallelecount-docker status][runallelecount-docker-badge]][runallelecount-docker-link]
@@ -88,7 +88,7 @@ A container named after the process is made for each process. If a container can
 
 ## snpeff [![snpeff-docker status][snpeff-docker-badge]][snpeff-docker-link]
 
-- Based on `openjdk:8`
+- Based on `openjdk:8-slim`
 - Contain **[snpEff][snpeff-link]** 4.3i
 
 ## snpeffgrch37 [![snpeffgrch37-docker status][snpeffgrch37-docker-badge]][snpeffgrch37-docker-link]
@@ -110,7 +110,7 @@ A container named after the process is made for each process. If a container can
 
 ## vep [![vep-docker status][vep-docker-badge]][vep-docker-link]
 
-- Based on `ubuntu:16.04`
+- Based on `debian:8.6`
 - Contain **[VEP][vep-link]** v89.7
 
 ## vepgrch37 [![vepgrch37-docker status][vepgrch37-docker-badge]][vepgrch37-docker-link]
