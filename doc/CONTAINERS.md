@@ -9,8 +9,8 @@ A container named after the process is made for each process. If a container can
 
 ## concatvcf [![concatvcf-docker status][concatvcf-docker-badge]][concatvcf-docker-link]
 
-- Based on `maxulysse/gatk:1.1`
-- Contain **[Picard][picard-link]** 2.0.1
+- Based on `debian:8.6`
+- Contain **[pigz][pigz-link]** 2.3.4
 
 ## fastqc [![fastqc-docker status][fastqc-docker-badge]][fastqc-docker-link]
 
@@ -168,6 +168,7 @@ A container named after the process is made for each process. If a container can
 [picard-docker-badge]: https://img.shields.io/docker/automated/maxulysse/picard.svg
 [picard-docker-link]: https://hub.docker.com/r/maxulysse/picard
 [picard-link]: https://github.com/broadinstitute/picard
+[pigz-link]: https://zlib.net/pigz/
 [qualimap-docker-badge]: https://img.shields.io/docker/automated/maxulysse/qualimap.svg
 [qualimap-docker-link]: https://hub.docker.com/r/maxulysse/qualimap
 [qualimap-link]: http://qualimap.bioinfo.cipf.es
