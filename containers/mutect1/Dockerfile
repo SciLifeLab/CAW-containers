@@ -1,8 +1,13 @@
-FROM openjdk:7
+FROM openjdk:7-slim
 
 LABEL author="Maxime Garcia" \
 description="MuTect 1.1.5 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
+
+# Install libraries
+RUN apt-get update && apt-get install -y --no-install-recommends \
+curl \
+&& rm -rf /var/lib/apt/lists/*
 
 # Setup ENV variables
 ENV MUTECT_BIN="muTect-1.1.5-bin.zip" \
