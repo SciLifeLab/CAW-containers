@@ -49,7 +49,7 @@ A container named after the process is made for each process. If a container can
 
 ## mutect1 [![mutect1-docker status][mutect1-docker-badge]][mutect1-docker-link]
 
-- Based on `openjdk:7`
+- Based on `openjdk:7-slim`
 - Contain **[MuTect1][mutect1-link]** 1.5
 
 ## picard [![picard-docker status][picard-docker-badge]][picard-docker-link]
