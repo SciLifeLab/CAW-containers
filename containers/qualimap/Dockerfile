@@ -1,4 +1,4 @@
-FROM openjdk:8-slim
+FROM openjdk:8
 
 LABEL author="Maxime Garcia" \
 description="Qualimap 2.2.1 image for use in CAW" \
