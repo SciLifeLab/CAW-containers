@@ -14,7 +14,7 @@ A container named after the process is made for each process. If a container can
 
 ## fastqc [![fastqc-docker status][fastqc-docker-badge]][fastqc-docker-link]
 
-- Based on `openjdk:8-slim`
+- Based on `openjdk:8`
 - Contain **[FastQC][fastqc-link]** 0.11.5
 
 ## freebayes [![freebayes-docker status][freebayes-docker-badge]][freebayes-docker-link]
@@ -39,13 +39,13 @@ A container named after the process is made for each process. If a container can
 
 ## mapreads [![mapreads-docker status][mapreads-docker-badge]][mapreads-docker-link]
 
-- Based on `maxulysse/samtools:1.0`
+- Based on `maxulysse/samtools:1.1`
 - Contain **[BWA][bwa-link]** 0.7.8
 
 ## multiqc [![multiqc-docker status][multiqc-docker-badge]][multiqc-docker-link]
 
 - Based on `openjdk:8-slim`
-- Contain **[MultiQC][multiqc-link]** 0.9
+- Contain **[MultiQC][multiqc-link]** 1.0
 
 ## mutect1 [![mutect1-docker status][mutect1-docker-badge]][mutect1-docker-link]
 
@@ -59,17 +59,17 @@ A container named after the process is made for each process. If a container can
 
 ## qualimap [![qualimap-docker status][qualimap-docker-badge]][qualimap-docker-link]
 
-- Based on `openjdk:8-slim`
+- Based on `openjdk:8`
 - Contain **[qualimap][qualimap-link]** 2.2.1
 
 ## runallelecount [![runallelecount-docker status][runallelecount-docker-badge]][runallelecount-docker-link]
 
-- Based on `maxulysse/samtools:1.0`
+- Based on `maxulysse/samtools:1.1`
 - Contain **[AlleleCount][allelecount-link]** 2.2.0
 
 ## runascat [![runascat-docker status][runascat-docker-badge]][runascat-docker-link]
 
-- Based on `maxulysse/samtools:1.0`
+- Based on `maxulysse/samtools:1.1`
 - Contain **[RColorBrewer][rcolorbrewer-link]**
 
 ## runconvertallelecounts [![runconvertallelecounts-docker status][runconvertallelecounts-docker-badge]][runconvertallelecounts-docker-link]
@@ -78,7 +78,7 @@ A container named after the process is made for each process. If a container can
 
 ## runmanta [![runmanta-docker status][runmanta-docker-badge]][runmanta-docker-link]
 
-- Based on `maxulysse/samtools:1.0`
+- Based on `maxulysse/samtools:1.1`
 - Contain **[Manta][manta-link]** 1.0.3
 
 ## samtools [![samtools-docker status][samtools-docker-badge]][samtools-docker-link]
@@ -110,19 +110,19 @@ A container named after the process is made for each process. If a container can
 
 ## vep [![vep-docker status][vep-docker-badge]][vep-docker-link]
 
-- Based on `debian:8.6`
-- Contain **[VEP][vep-link]** v89.7
+- Based on `ubuntu:16.04`
+- Contain **[VEP][vep-link]** 90.1
 
 ## vepgrch37 [![vepgrch37-docker status][vepgrch37-docker-badge]][vepgrch37-docker-link]
 
 - Based on `maxulysse/vep`
-- Contain **[VEP][vep-link]** v89.7
+- Contain **[VEP][vep-link]** 90.1
 - Contain GRCh37
 
 ## vepgrch38 [![vepgrch38-docker status][vepgrch38-docker-badge]][vepgrch38-docker-link]
 
 - Based on `maxulysse/vep`
-- Contain **[VEP][vep-link]** v89.7
+- Contain **[VEP][vep-link]** 90.1
 - Contain GRCh38
 
 ---
