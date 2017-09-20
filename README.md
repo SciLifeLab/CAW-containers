@@ -1,4 +1,4 @@
-[![](doc/images/CAW-logo.png "CAW")][CAW-site-link]
+[![](doc/images/CAW_logo.png "CAW")][caw-site-link]
 
 # Containers for CAW
 
@@ -20,9 +20,11 @@ This repo comes with documentation about the different containers, found in the 
 - [Maxime Garcia](https://github.com/MaxUlysse)
 
 ---
-[![](doc/images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link] [![](doc/images/NGI-final-small.png "NGI")][ngi-link]
+[![](doc/images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link]
+[![](doc/images/NGI_logo.png "NGI")][ngi-link]
+[![](doc/images/NBIS_logo.png "NBIS")][nbis-link]
 
-[CAW-site-link]: http://opensource.scilifelab.se/projects/caw/
+[caw-site-link]: http://opensource.scilifelab.se/projects/caw/
 [gitter-badge]: https://badges.gitter.im/SciLifeLab/CAW.svg
 [gitter-link]: https://gitter.im/SciLifeLab/CAW
 [license-badge]: https://img.shields.io/github/license/SciLifeLab/CAW-containers.svg
@@ -30,7 +32,7 @@ This repo comes with documentation about the different containers, found in the 
 [nextflow-badge]: https://img.shields.io/badge/nextflow-%E2%89%A50.22.2-brightgreen.svg
 [nextflow-link]: https://www.nextflow.io/
 [ngi-link]: https://ngisweden.scilifelab.se/
-[scilifelab-link]: http://www.scilifelab.se/
+[scilifelab-link]: https://www.scilifelab.se/
 [scilifelab-stockholm-link]: https://www.scilifelab.se/platforms/ngi/
 [travis-badge]: https://api.travis-ci.org/SciLifeLab/CAW-containers.svg
 [travis-link]: https://travis-ci.org/SciLifeLab/CAW-containers

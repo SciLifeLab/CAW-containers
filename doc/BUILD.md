@@ -12,31 +12,31 @@ nextflow run . [--docker] [--singularity] [--singularityPublishDir <path>] [--pu
 ```
 
 - `--containers`: Choose which containers to build. Default: `all`. Possible values (to separate by commas):
- - `all` -  Build all available containers.
- - `bcftools`
- - `concatvcf`
- - `fastqc`
- - `freebayes`
- - `gatk`
- - `htslib`
- - `igvtools`
- - `mapreads`
- - `multiqc`
- - `mutect1`
- - `picard`
- - `qualimap`
- - `runallelecount`
- - `runascat`
- - `runconvertallelecounts`
- - `runmanta`
- - `samtools`
- - `snpeff` this container serves as a base for `snpeffgrch37` and `snpeffgrch38`
- - `snpeffgrch37`
- - `snpeffgrch38`
- - `strelka`
- - `vep` this container serves as a base for `vepgrch37` and `vepgrch38`
- - `vepgrch37`
- - `vepgrch38`
+  - `all` -  Build all available containers.
+  - `bcftools`
+  - `concatvcf`
+  - `fastqc`
+  - `freebayes`
+  - `gatk`
+  - `htslib`
+  - `igvtools`
+  - `mapreads`
+  - `multiqc`
+  - `mutect1`
+  - `picard`
+  - `qualimap`
+  - `runallelecount`
+  - `runascat`
+  - `runconvertallelecounts`
+  - `runmanta`
+  - `samtools`
+  - `snpeff` this container serves as a base for `snpeffgrch37` and `snpeffgrch38`
+  - `snpeffgrch37`
+  - `snpeffgrch38`
+  - `strelka`
+  - `vep` this container serves as a base for `vepgrch37` and `vepgrch38`
+  - `vepgrch37`
+  - `vepgrch38`
 
 - `--docker`: Build containers using `Docker`
 - `--push`: Push containers to `DockerHub`
@@ -51,8 +51,19 @@ nextflow run . [--docker] [--singularity] [--singularityPublishDir <path>] [--pu
 nextflow run . --docker --singularity --push --containers multiqc,fastqc
 ```
 
----
-[![](images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link] [![](images/NGI-final-small.png "NGI")][ngi-link]
+## For lazy users
+We provide script to build/push or pull all containers
+```bash
+./scripts/do_all.sh        # Build all docker containers
+./scripts/do_all.sh --push # Build and push all Docker containers into DockerHub
+./scripts/do_all.sh --pull # Pull all containers from DockerHub into Singularity
+```
 
+---
+[![](images/SciLifeLab_logo.png "SciLifeLab")][scilifelab-link]
+[![](images/NGI_logo.png "NGI")][ngi-link]
+[![](images/NBIS_logo.png "NBIS")][nbis-link]
+
+[nbis-link]: https://www.nbis.se/
 [ngi-link]: https://ngisweden.scilifelab.se/
-[scilifelab-link]: http://www.scilifelab.se/
+[scilifelab-link]: https://www.scilifelab.se/
