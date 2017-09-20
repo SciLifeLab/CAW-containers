@@ -5,7 +5,8 @@ description="R 3.3.2 image for use in CAW" \
 maintainer="maxime.garcia@scilifelab.se"
 
 # Install libraries
-RUN R -e "install.packages(c('RColorBrewer','grDevices','graphics','stats','utils'), repos='https://cloud.r-project.org/')"
+RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile \
+&& R --no-save "install.packages('RColorBrewer')"
 
 # Create UPPMAX directories
 RUN mkdir /pica /proj /sw
