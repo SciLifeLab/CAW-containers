@@ -7,11 +7,6 @@ A container named after the process is made for each process. If a container can
 - Based on `debian:8.6`
 - Contain **[BCFTools][bcftools-link]** 1.4
 
-## concatvcf [![concatvcf-docker status][concatvcf-docker-badge]][concatvcf-docker-link]
-
-- Based on `debian:8.6`
-- Contain **[pigz][pigz-link]** 2.3.4
-
 ## fastqc [![fastqc-docker status][fastqc-docker-badge]][fastqc-docker-link]
 
 - Based on `openjdk:8`
@@ -79,34 +74,34 @@ A container named after the process is made for each process. If a container can
 ## runmanta [![runmanta-docker status][runmanta-docker-badge]][runmanta-docker-link]
 
 - Based on `maxulysse/samtools:1.1`
-- Contain **[Manta][manta-link]** 1.0.3
+- Contain **[Manta][manta-link]** 1.1.1
 
 ## samtools [![samtools-docker status][samtools-docker-badge]][samtools-docker-link]
 
 - Based on `debian:8.6`
-- Contain **[samtools][samtools-link]** 1.4
+- Contain **[SAMTools][samtools-link]** 1.4
 
 ## snpeff [![snpeff-docker status][snpeff-docker-badge]][snpeff-docker-link]
 
 - Based on `openjdk:8-slim`
-- Contain **[snpEff][snpeff-link]** 4.3i
+- Contain **[snpEff][snpeff-link]** 4.3m
 
 ## snpeffgrch37 [![snpeffgrch37-docker status][snpeffgrch37-docker-badge]][snpeffgrch37-docker-link]
 
 - Based on `maxulysse/snpeff`
-- Contain **[snpEff][snpeff-link]** 4.3i
+- Contain **[snpEff][snpeff-link]** 4.3m
 - Contain GRCh37.75
 
 ## snpeffgrch38 [![snpeffgrch38-docker status][snpeffgrch38-docker-badge]][snpeffgrch38-docker-link]
 
 - Based on `maxulysse/snpeff`
-- Contain **[snpEff][snpeff-link]** 4.3i
+- Contain **[snpEff][snpeff-link]** 4.3m
 - Contain GRCh38.86
 
 ## strelka [![strelka-docker status][strelka-docker-badge]][strelka-docker-link]
 
 - Based on `debian:8.6`
-- Contain **[Strelka][strelka-link]** 1.0.15
+- Contain **[Strelka][strelka-link]** 2.8.2
 
 ## vep [![vep-docker status][vep-docker-badge]][vep-docker-link]
 
@@ -162,13 +157,11 @@ A container named after the process is made for each process. If a container can
 [mutect1-docker-link]: https://hub.docker.com/r/maxulysse/mutect1
 [mutect1-link]: https://github.com/broadinstitute/mutect
 [nbis-link]: https://www.nbis.se/
-[nextflow-badge]: https://img.shields.io/badge/nextflow-%E2%89%A50.22.2-brightgreen.svg
 [nextflow-link]: https://www.nextflow.io/
 [ngi-link]: https://ngisweden.scilifelab.se/
 [picard-docker-badge]: https://img.shields.io/docker/automated/maxulysse/picard.svg
 [picard-docker-link]: https://hub.docker.com/r/maxulysse/picard
 [picard-link]: https://github.com/broadinstitute/picard
-[pigz-link]: https://zlib.net/pigz/
 [qualimap-docker-badge]: https://img.shields.io/docker/automated/maxulysse/qualimap.svg
 [qualimap-docker-link]: https://hub.docker.com/r/maxulysse/qualimap
 [qualimap-link]: http://qualimap.bioinfo.cipf.es
@@ -203,5 +196,3 @@ A container named after the process is made for each process. If a container can
 [vepgrch37-docker-link]: https://hub.docker.com/r/maxulysse/vepgrch37
 [vepgrch38-docker-badge]: https://img.shields.io/docker/automated/maxulysse/vepgrch38.svg
 [vepgrch38-docker-link]: https://hub.docker.com/r/maxulysse/vepgrch38
-[version-badge]: https://img.shields.io/github/release/MaxUlysse/CAW-containers.svg
-[version-link]: https://github.com/MaxUlysse/CAW-containers/releases/latest

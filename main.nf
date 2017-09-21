@@ -150,7 +150,6 @@ def defineContainersList(){
   // Return list of authorized containers
   return [
     'bcftools',
-    'concatvcf',
     'fastqc',
     'freebayes',
     'gatk',
